@@ -467,7 +467,7 @@ contoh #corona indonesia
 *-----[ Menu Rahasia Kamu ]-----*
 *#Menu 1*
 
-Beli Prenium cuman Murah 
+Beli Prenium Murah mulai 2k
 Buat Bot pakai no sendiri 15k
 DM Instragram Kita
 Pembayaran Dana Ovo Gopay Pulsa
