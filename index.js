@@ -47,7 +47,7 @@ const start = (bocchi = new Client()) => {
 
     bocchi.onMessage((message) => {
         // Uncomment code di bawah untuk mengaktifkan auto-delete cache pesan.
-        /*
+        
         bocchi.getAmountOfLoadedMessages()
             .then((msg) => {
                 if (msg >= 1000) {
@@ -56,11 +56,11 @@ const start = (bocchi = new Client()) => {
                     console.log(color('[BOCCHI]'), color('Cache deleted!', 'yellow'))
                 }
             })
-        */
+        
         
         // Comment code msgHandler di bawah untuk mengaktifkan auto-update. Kemudian, uncomment code require di bawah msgHandler.
-        msgHandler(bocchi, message)
-        // require('./message/index.js')(bocchi, message)
+        //msgHandler(bocchi, message)
+        require('./message/index.js')(bocchi, message)
     })
 
     bocchi.onIncomingCall(async (callData) => {
