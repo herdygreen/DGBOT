@@ -320,18 +320,18 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
         }
         if (chats == 'Tambahlimit') {
             if (!isGroupMsg) await bocchi.reply(from, `
-            Untuk Menabah Limit kamu bisa
+Untuk Menabah Limit kamu bisa
 
-            1. Komen dan Subscribe YT kita dan Follow IG Kita
-            YT Remsi youtube.com/c/DGRagamCaraSederhana
+1. Komen dan Subscribe YT kita dan Follow IG Kita
+YT Remsi youtube.com/c/DGRagamCaraSederhana
             
             
-            2. Kalau Ga Langusng aja beli Member Premium mulai dr 2k
-            DM IG kita instragram.com/indobotwa 
+2. Kalau Ga Langusng aja beli Member Premium mulai dr 2k
+DM IG kita instragram.com/indobotwa 
             
-            Pemesanan hanya Via Instragram
+Pemesanan hanya Via Instragram
             
-            Limit Gratis Tiap hari Hanya buat km yang Subscribe YouTube KIta:
+Limit Gratis Tiap hari Hanya buat km yang Subscribe YouTube KIta:
             ❏ *_*
             
             `, id)
