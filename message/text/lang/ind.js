@@ -366,7 +366,7 @@ exports.limit = () => {
 *── 「 LIMIT 」 ──*
 
 Oh Sorry Ka, Batas atau limit Pengunaan Km udah habis untuk hari ini tunggu besok
-#tambahlimit
+ketik : Tambahlimit
 
     `
 }
