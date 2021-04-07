@@ -318,7 +318,6 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
         if (chats == 'liatYT') {
             if (!isGroupMsg) await bocchi.reply(from, `Untuk Melihat Cara Register ada di Menit 1 https://www.youtube.com/watch?v=URM5Gwzashs`, id)
         }
-        }
         if (chats == 'tambahlimit') {
             if (!isGroupMsg) await bocchi.reply(from, `
             Untuk Menabah Limit kamu bisa
