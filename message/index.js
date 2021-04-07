@@ -47,7 +47,7 @@ const { daily, level, register, afk, reminder, premium, limit} = require('../fun
 const Exif = require('../tools/exif')
 const exif = new Exif()
 const cd = 4.32e+7
-const limitCount = 2
+const limitCount = 4
 const errorImg = 'https://i.ibb.co/jRCpLfn/user.png'
 const tanggal = moment.tz('Asia/Jakarta').format('DD-MM-YYYY')
 /********** END OF UTILS **********/
@@ -290,27 +290,52 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
         // AUTO REPLY by Piyo >_<
         
         if (chats == 'p') {
-            if (!isGroupMsg) await bocchi.reply(from, `Halo Kak, Untuk Memulai bot silahkan ketik ${prefix}menu`, id)
+            if (!isGroupMsg) await bocchi.reply(from, `Halo Kak, Untuk Memulai bot Register Sesuai Turorial di YT  Ketik liatYT`, id)
         }
         
         if (chats == 'P') {
-            if (!isGroupMsg) await bocchi.reply(from, `Halo Kak, Untuk Memulai bot silahkan ketik ${prefix}menu`, id)
+            if (!isGroupMsg) await bocchi.reply(from, `Halo Kak, :) Untuk Memulai bot Register Sesuai Turorial di YT  Ketik liatYT`, id)
         }
         
         if (chats == 'bot') {
-            if (!isGroupMsg) await bocchi.reply(from, `Halo Kak, Untuk Memulai bot silahkan ketik ${prefix}menu`, id)
+            if (!isGroupMsg) await bocchi.reply(from, `Halo Kak, ^_^  Untuk Memulai bot Register Sesuai Turorial di YT  Ketik liatYT`, id)
         }
         
         if (chats == 'Bot') {
-            if (!isGroupMsg) await bocchi.reply(from, `Halo Kak, Untuk Memulai bot silahkan ketik ${prefix}menu`, id)
+            if (!isGroupMsg) await bocchi.reply(from, `Halo Kak, Untuk Memulai bot Register Sesuai Turorial di YT  Ketik liatYT`, id)
         }
         
         if (chats == 'assalamualaikum') {
-            if (!isGroupMsg) await bocchi.reply(from, `Waalaikumsalam , Halo Kak, Untuk Memulai bot silahkan ketik ${prefix}menu`, id)
+            if (!isGroupMsg) await bocchi.reply(from, `Waalaikumsalam , Untuk Memulai bot Register Sesuai Turorial di YT  Ketik liatYT`, id)
         }
         
         if (chats == 'Assalamualaikum') {
-            if (!isGroupMsg) await bocchi.reply(from, `Waalaikumsalam , Halo Kak, Untuk Memulai bot silahkan ketik ${prefix}menu`, id)
+            if (!isGroupMsg) await bocchi.reply(from, `Waalaikumsalam , Untuk Memulai bot Register Sesuai Turorial di YT  Ketik liatYT`, id)
+        }
+        if (chats == 'menu') {
+            if (!isGroupMsg) await bocchi.reply(from, `Untuk Melihat Menu bisa diliat di photo profile BOT `, id)
+        }
+        if (chats == 'liatYT') {
+            if (!isGroupMsg) await bocchi.reply(from, `Untuk Melihat Cara Register ada di Menit 1 https://www.youtube.com/watch?v=URM5Gwzashs`, id)
+        }
+        }
+        if (chats == 'tambahlimit') {
+            if (!isGroupMsg) await bocchi.reply(from, `
+            Untuk Menabah Limit kamu bisa
+
+            1. Komen dan Subscribe YT kita dan Follow IG Kita
+            YT Remsi youtube.com/c/DGRagamCaraSederhana
+            
+            
+            2. Kalau Ga Langusng aja beli Member Premium mulai dr 2k
+            DM IG kita instragram.com/indobotwa 
+            
+            Pemesanan hanya Via Instragram
+            
+            Limit Gratis Tiap hari Hanya buat km yang Subscribe YouTube KIta:
+            ❏ *_*
+            
+            `, id)
         }
         
 
@@ -1226,8 +1251,9 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
             break
 
             // Bot
-            case 'menu':
-            case 'help':
+            
+            case 'menux':
+            case 'helpx':
                 const jumlahUser = _registered.length
                 const levelMenu = level.getLevelingLevel(sender.id, _level)
                 const xpMenu = level.getLevelingXp(sender.id, _level)
@@ -1260,6 +1286,7 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                     await bocchi.sendText(from, ind.menu(jumlahUser, levelMenu, xpMenu, role, pushname, reqXpMenu, isPremium ? 'YES' : 'NO'))
                 }
             break
+
             case 'rules':
             case 'rule':
                 if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
@@ -1356,7 +1383,7 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
             break
 */			
 			
-            case 'premiumcheck':
+            case 'listprem':
             case 'cekpremium':
                 if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
                 if (!isPremium) return await bocchi.reply(from, ind.notPremium(), id)
@@ -2381,7 +2408,7 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                         const encryptMedia = isQuotedGif || isQuotedVideo ? quotedMsg : message
                         const mediaData = await decryptMedia(encryptMedia, uaOverride)
                         const videoBase64 = `data:${mimetype};base64,${mediaData.toString('base64')}`
-                        await bocchi.sendMp4AsSticker(from, videoBase64, null, { stickerMetadata: true, pack: 'Indobotwa', author: '@indobotwa', fps: 30, startTime: '00:00:00.0', endTime : '00:00:05.0', crop: false, loop: 0 })
+                        await bocchi.sendMp4AsSticker(from, videoBase64, null, { stickerMetadata: true, pack: 'BocchiBot', author: '@SlavyanDesu', fps: 30, startTime: '00:00:00.0', endTime : '00:00:05.0', crop: false, loop: 0 })
                             .then(() => {
                                 console.log(`Sticker processed for ${processTime(t, moment())} seconds`)
                             })
@@ -3274,16 +3301,7 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                     await bocchi.reply(from, ind.wrongFormat(), id)
                 }
             break
-            case 'bc':
-                if (!isOwner) return await bocchi.reply(from, ind.ownerOnly(), id)
-                if (!q) return await bocchi.reply(from, ind.emptyMess(), id)
-                const chats = await bocchi.getAllChatIds()
-                for (let bcs of chats) {
-                    let cvk = await bocchi.getChatById(bcs)
-                    if (!cvk.isReadOnly) await bocchi.sendText(bcs, `${q}\n\n- Slavyan (Kal)\n_Broadcasted message_`)
-                }
-                await bocchi.reply(from, ind.doneOwner(), id)
-            break
+            case 'clrall':
             case 'clearall':
                 if (!isOwner) return await bocchi.reply(from, ind.ownerOnly(), id)
                 const allChats = await bocchi.getAllChats()
