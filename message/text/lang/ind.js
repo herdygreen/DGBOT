@@ -2,15 +2,17 @@
 const { prefix } = require('../../../config.json')
 
 exports.wait = () => {
-    return `Mohon tunggu sebentar ~`
+    return `Sedang Proses.. Mohon tunggu maksimal 5 menit baru Kirim Ulang ~`
 }
 
+/*
 exports.ok = () => {
     return `Ok Selesai Mantapkan~`
 }
+*/
 
 exports.wrongFormat = () => {
-    return `Upss Format km salah! n\ Silakan cek cara penggunaan di *${prefix}menu*.`
+    return `Upss Format perintah km salah! n\ Silakan Liat Menu di photo Profile Kita*.`
 }
 
 exports.emptyMess = () => {
@@ -18,7 +20,7 @@ exports.emptyMess = () => {
 }
 
 exports.cmdNotFound = (cmd) => {
-    return `Perinta *${prefix}${cmd}* tidak ditemukan! Perhatikan di #menu yah`
+    return `Perinta *${prefix}${cmd}* tidak ditemukan! Silakan Liat Menu di photo Profile Kita`
 }
 
 exports.blocked = (ownerNumber) => {
@@ -95,7 +97,7 @@ exports.ytFound = (res) => {
 
 /*dengan format:\n*${prefix}register* nama | umur\n\n *CONTOH* : \n ${prefix}register Caca Cantika | 16  \n *inget pakai tanda* "|"*/
 exports.notRegistered = () => {
-    return `Kamu belum terdaftar di database!\n\n Silakan register Sesuai Totorial di YT kami \n https://www.youtube.com/watch?v=URM5Gwzashs \n ada di menit 1   `
+    return `Kamu belum terdaftar \n\n Silakan Daftar Sesuai Totorial di YT kami liatYT   `
 }
 
 exports.registered = (name, age, userId, time, serial) => {
@@ -103,7 +105,7 @@ exports.registered = (name, age, userId, time, serial) => {
 }
 
 exports.registeredAlready = () => {
-    return `Kamu sudah mendaftar sebelumnya. langsung Pakai aja ke menu`
+    return `Kamu sudah mendaftar sebelumnya. langsung Pakai aja`
 }
 
 exports.received = (pushname) => {
@@ -111,10 +113,7 @@ exports.received = (pushname) => {
 }
 
 exports.daily = (time) => {
-    return `Oh Sorry Ka, Batas atau limit Pengunaan Km udah habis n\ Kamu Bisa Lakukan Ini n\ 1. Komen dan Subscribe YT kita dan Follow IG Kita \n  YT Remsi youtube.com/c/DGRagamCaraSederhana n\n\ 
-	
-	2. Kalau Ga Langusng aja beli Member Premium mulai dr 2k n\ (Dana Ovo Gopay Pulsa) n\ DM IG kita \n instragram.com\indobotwa  n\ Order hanya Via Instragram 
-	
+    return `Oh Sorry Ka, Batas atau limit Pengunaan km habis ketik tambahlimit
 	`
 }
 
@@ -366,19 +365,8 @@ exports.limit = () => {
     return `
 *── 「 LIMIT 」 ──*
 
-Oh Sorry Ka, Batas atau limit Pengunaan Km udah habis
-Kamu Bisa Lakukan Ini
-1. Komen dan Subscribe YT kita dan Follow IG Kita
-YT Remsi youtube.com/c/DGRagamCaraSederhana
-
-
-2. Kalau Ga Langusng aja beli Member Premium mulai dr 2k
-DM IG kita instragram.com/indobotwa 
-
-Pemesanan hanya Via Instragram
-
-Limit Gratis Tiap hari Hanya buat km yang Subscribe YouTube KIta:
-❏ *_*
+Oh Sorry Ka, Batas atau limit Pengunaan Km udah habis untuk hari ini tunggu besok
+#tambahlimit
 
     `
 }
@@ -467,7 +455,7 @@ contoh #corona indonesia
 *-----[ Menu Rahasia Kamu ]-----*
 *#Menu 1*
 
-Beli Prenium Murah mulai 2k
+Beli Prenium cuman Murah 
 Buat Bot pakai no sendiri 15k
 DM Instragram Kita
 Pembayaran Dana Ovo Gopay Pulsa
