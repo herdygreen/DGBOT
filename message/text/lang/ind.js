@@ -2,7 +2,7 @@
 const { prefix } = require('../../../config.json')
 
 exports.wait = () => {
-    return `Sedang Proses.. Mohon tunggu maksimal 5 menit baru Kirim Ulang ~`
+    return `Sedang Proses..  5 menit ga jadi Kirim Ulang ~`
 }
 
 /*
@@ -24,7 +24,7 @@ exports.cmdNotFound = (cmd) => {
 }
 
 exports.blocked = (ownerNumber) => {
-    return `haduhh Be Smart Bro Bot Pasti tidak menerima panggilan. Karena kamu telah melanggar rules, maka kamu telah diblok!\n\nHarap hubungi owner: instragram.com/indobotwa`
+    return `haduhh Be Smart Bro Bot Pasti tidak menerima panggilan. Karena kamu telah Telpon, maka kamu telah diblok!\n\nHarap hubungi owner: instragram.com/indobotwa`
 }
 
 exports.ownerOnly = () => {
@@ -97,7 +97,7 @@ exports.ytFound = (res) => {
 
 /*dengan format:\n*${prefix}register* nama | umur\n\n *CONTOH* : \n ${prefix}register Caca Cantika | 16  \n *inget pakai tanda* "|"*/
 exports.notRegistered = () => {
-    return `Kamu belum terdaftar \n\n Silakan Daftar Sesuai Totorial di YT kami liatYT   `
+    return `Kamu belum terdaftar \n\n Silakan Daftar Sesuai Totorial di YT kami ketik : Liatyt   `
 }
 
 exports.registered = (name, age, userId, time, serial) => {
@@ -1227,8 +1227,7 @@ Sanksi: *AUTO BLOCK*
 3. Berkata Kasar
 Sanksi: *AUTO BLOCK*
 
-Jika sudah dipahami rules-nya, silakan ketik *${prefix}menu* untuk memulai!
-
+Jika sudah dipahami rules-nya, Langsung aja Menu ada di Profile WA Bot
     `
 }
 
