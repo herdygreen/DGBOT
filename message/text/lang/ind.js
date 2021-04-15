@@ -38,6 +38,33 @@ Oh Sorry Ka, Batas atau limit Pengunaan Km udah habis untuk hari ini tunggu beso
     `
 }
 
+exports.harga = () => {
+    return `
+Hallo Ka untuk jd Member Premium
+Bisa langsung Pilih
+
+**Donasi Bot Premium**
+
+Paket 1 = 2k 1 hari Unlimited Chat
+
+Paket 2 = 5k 7 hari Unlimited Chat
+
+Paket 3 = 15k 30 Hari Unlimited Chat
+
+Pembayaran Bisa di
+(Gopay, DANA, OVO, Shope)
+Pulsa Tanya dulu
+
+🤗🤗🤗🤗🤗🤗
+
+********
+Pemesan only Instragram
+
+Instragram.com/indobotwa
+
+    `
+}
+
 exports.rules = () => {
     return `
 -----[ RULES ]-----
