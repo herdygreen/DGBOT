@@ -100,7 +100,7 @@ Contoh : ${prefix}Menu 1  ==>untuk membua Menu Download
     `
 }
 
-exports.menuSticker = (jumlahUser, level, xp, role, pushname, requiredXp, premium) => {
+exports.menu1 = (jumlahUser, level, xp, role, pushname, requiredXp, premium) => {
     return `
 *-----[ STICKER ]-----*
 ¦ • *${prefix}sticker* (riply/diskripsi Photo)
@@ -111,7 +111,7 @@ _Index of [1]_
     `
 }
 
-exports.menuTextpro = (pushname) => {
+exports.menu2 = (pushname) => {
     return `
 Hallo ${pushname}
 *-----[ Text Pro Me ]-----*
@@ -163,7 +163,7 @@ _Index of [2]_
 }
 
 
-exports.menuOxy = (pushname) => {
+exports.menu3 = (pushname) => {
     return `
     *Photo Oxy*
 
@@ -200,7 +200,7 @@ _Index of [3]_
     `
 }
 
-exports.menu360 = (pushname) => {
+exports.menu4 = (pushname) => {
     return `
 Hallo ${pushname}
 ¦--? Ephoto 360 ?
@@ -240,7 +240,7 @@ _Index of [4]_
 }
 
 
-exports.menuDownload = (pushname) => {
+exports.menu5 = (pushname) => {
     return `
 Hallo ${pushname}
 ¦--? Downloader ?
@@ -268,7 +268,7 @@ _Index of [5]_
     `
 }
 
-exports.menugame = (pushname) => {
+exports.menu6 = (pushname) => {
     return `
 Hallo ${pushname}
 -----[ FUN / Game ]-----
@@ -279,7 +279,7 @@ _Index of [6]_
     `
 }
 
-exports.menuislam = (pushname) => {
+exports.menu7 = (pushname) => {
     return `
 Hallo ${pushname}
 -----[ Menu Islam]-----
