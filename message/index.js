@@ -941,19 +941,19 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                 const reqXpMenu = 5 * Math.pow(levelMenu, 2) + 50 * 1 + 100
                // if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
                 if (args[0] === '1') {
-                    await bocchi.sendText(from, ind.menuDownloader())
+                    await bocchi.sendText(from, ind.menu1())
                 } else if (args[0] === '2') {
-                    await bocchi.sendText(from, ind.menuBot())
+                    await bocchi.sendText(from, ind.menu2())
                 } else if (args[0] === '3') {
-                    await bocchi.sendText(from, ind.menuMisc())
+                    await bocchi.sendText(from, ind.menu3())
                 } else if (args[0] === '4') {
-                    await bocchi.sendText(from, ind.menuSticker())
+                    await bocchi.sendText(from, ind.menu4())
                 } else if (args[0] === '5') {
-                    await bocchi.sendText(from, ind.menuWeeaboo())
+                    await bocchi.sendText(from, ind.menu5())
                 } else if (args[0] === '6') {
-                    await bocchi.sendText(from, ind.menuFun())
+                    await bocchi.sendText(from, ind.menu6())
                 } else if (args[0] === '7') {
-                    await bocchi.sendText(from, ind.menuModeration())
+                    await bocchi.sendText(from, ind.menu7())
                 } else if (args[0] === '8') {
                     if (isGroupMsg && !isNsfw) return await bocchi.reply(from, ind.notNsfw(), id)
                     await bocchi.sendText(from, ind.menuNsfw())
