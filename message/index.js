@@ -1434,7 +1434,7 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                 limit.addLimit(sender.id, _limit, isPremium, isOwner)
                 await bocchi.reply(from, ind.wait(), id)
                 console.log('Creating writing...')
-                await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/nulis?apikey=bb6f3ce7b412ee4bd062c567&text=${q}`, 'nulis.jpg', '', id)
+                await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/nulis?apikey=${config.vhtear}&text=${q}`, 'nulis.jpg', '', id)
                     .then(() => console.log('Success sending write image!'))
                     .catch(async (err) => {
                         console.error(err)
@@ -1450,7 +1450,7 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                 limit.addLimit(sender.id, _limit, isPremium, isOwner)
                 await bocchi.reply(from, ind.wait(), id)
                 console.log('Creating 3D text...')
-                await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/textprome/blackpink?apikey=bb6f3ce7b412ee4bd062c567&text=${q}`,`${q}.jpg`, '', id)
+                await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/textprome/blackpink?apikey=${config.vhtear}&text=${q}`,`${q}.jpg`, '', id)
                 console.log('Success creating 3D text!')
             break
 			
@@ -1465,7 +1465,7 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                     limit.addLimit(sender.id, _limit, isPremium, isOwner)
                     await bocchi.reply(from, ind.wait(), id)
                     console.log('Creating 3D text...')
-                    await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/photooxy1/${command}?apikey=bb6f3ce7b412ee4bd062c567&text=${q}`,`${q}.jpg`, '', id)
+                    await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/photooxy1/${command}?apikey=${config.vhtear}&text=${q}`,`${q}.jpg`, '', id)
                     console.log('Success creating 3D text!')
             break
 
