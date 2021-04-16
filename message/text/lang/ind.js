@@ -377,7 +377,7 @@ Berikut adalah menu Utama Bot Kita:
 *[2]* Text Pro Me
 *[3]* Photo Oxy ?
 *[4]* Ephoto 360
-*[5]* Download
+*[5]* Download (coming soon)
 *[6]* Fun/Game
 *[7]* Menu Islam
 
@@ -400,50 +400,51 @@ _Index of [1]_
 
 exports.menu2 = (pushname) => {
     return `
-Hallo ${pushname}
 *-----[ Text Pro Me ]-----*
-¦ • ${prefix}blackpink text
-¦ • ${prefix}neon text
-¦ • ${prefix}greenneon text
-¦ • ${prefix}advanceglow text
-¦ • ${prefix}futureneon text
-¦ • ${prefix}sandwriting text
-¦ • ${prefix}sandsummer text
-¦ • ${prefix}sandengraved text
-¦ • ${prefix}metaldark text
-¦ • ${prefix}neonlight text
-¦ • ${prefix}holographic text
-¦ • ${prefix}text1917 text
-¦ • ${prefix}minion text
-¦ • ${prefix}deluxesilver text
-¦ • ${prefix}newyearcard text
-¦ • ${prefix}bloodfrosted text
-¦ • ${prefix}halloween text
-¦ • ${prefix}jokerlogo text
-¦ • ${prefix}fireworksparkle text
-¦ • ${prefix}natureleaves text
-¦ • ${prefix}bokeh text
-¦ • ${prefix}toxic text
-¦ • ${prefix}strawberry text
-¦ • ${prefix}box3d text
-¦ • ${prefix}roadwarning text
-¦ • ${prefix}breakwall text
-¦ • ${prefix}icecold text
-¦ • ${prefix}luxury text
-¦ • ${prefix}cloud text
-¦ • ${prefix}summersand text
-¦ • ${prefix}horrorblood text
-¦ • ${prefix}thunder text
-¦ • ${prefix}pornhub text1 text2
-¦ • ${prefix}glitch text1 text2
-¦ • ${prefix}avenger text1 text2
-¦ • ${prefix}space text1 text2
-¦ • ${prefix}ninjalogo text1 text2
-¦ • ${prefix}marvelstudio text1 text2
-¦ • ${prefix}lionlogo text1 text2
-¦ • ${prefix}wolflogo text1 text2
-¦ • ${prefix}steel3d text1 text2
-¦ • ${prefix}wallgravity text1 text2
+
+¦ • ${prefix}blackpink (Text)
+¦ • ${prefix}neon (Text)
+¦ • ${prefix}greenneon (Text)
+¦ • ${prefix}advanceglow (Text)
+¦ • ${prefix}futureneon (Text)
+¦ • ${prefix}sandwriting (Text)
+¦ • ${prefix}sandsummer (Text)
+¦ • ${prefix}sandengraved (Text)
+¦ • ${prefix}metaldark (Text)
+¦ • ${prefix}neonlight (Text)
+¦ • ${prefix}holographic (Text)
+¦ • ${prefix}text1917 (Text)
+¦ • ${prefix}minion (Text)
+¦ • ${prefix}deluxesilver (Text)
+¦ • ${prefix}newyearcard (Text)
+¦ • ${prefix}bloodfrosted (Text)
+¦ • ${prefix}halloween (Text)
+¦ • ${prefix}jokerlogo (Text)
+¦ • ${prefix}fireworksparkle (Text)
+¦ • ${prefix}natureleaves (Text)
+¦ • ${prefix}bokeh (Text)
+¦ • ${prefix}toxic (Text)
+¦ • ${prefix}strawberry (Text)
+¦ • ${prefix}box3d (Text)
+¦ • ${prefix}roadwarning (Text)
+¦ • ${prefix}breakwall (Text)
+¦ • ${prefix}icecold (Text)
+¦ • ${prefix}luxury (Text)
+¦ • ${prefix}cloud (Text)
+¦ • ${prefix}summersand (Text)
+¦ • ${prefix}horrorblood (Text)
+¦ • ${prefix}thunder (Text)
+¦ • ${prefix}pornhub (Text)
+¦ • ${prefix}glitch (Text)
+¦ • ${prefix}avenger (Text)
+¦ • ${prefix}space (Text)
+¦ • ${prefix}ninjalogo (Text)
+¦ • ${prefix}marvelstudio (Text)
+¦ • ${prefix}lionlogo (Text)
+¦ • ${prefix}wolflogo (Text)
+¦ • ${prefix}steel3d (Text)
+¦ • ${prefix}wallgravity (Text)
+
 
 _Index of [2]_
     `
@@ -454,34 +455,36 @@ exports.menu3 = (pushname) => {
     return `
     *Photo Oxy*
 
-¦ • ${prefix}shadow text
-¦ • ${prefix}cup text
-¦ • ${prefix}cup1 text
-¦ • ${prefix}romance text
-¦ • ${prefix}smoke text
-¦ • ${prefix}burnpaper text
-¦ • ${prefix}lovemessage text
-¦ • ${prefix}undergrass text
-¦ • ${prefix}love text
-¦ • ${prefix}coffe text
-¦ • ${prefix}woodheart text
-¦ • ${prefix}woodenboard text
-¦ • ${prefix}summer3d text
-¦ • ${prefix}wolfmetal text
-¦ • ${prefix}nature3d text
-¦ • ${prefix}underwater text
-¦ • ${prefix}golderrose text
-¦ • ${prefix}summernature text
-¦ • ${prefix}letterleaves text
-¦ • ${prefix}glowingneon text
-¦ • ${prefix}fallleaves text
-¦ • ${prefix}flamming text
-¦ • ${prefix}harrypotter text
-¦ • ${prefix}carvedwood text
-¦ • ${prefix}tiktok text1 text2
-¦ • ${prefix}arcade8bit text1 text2
-¦ • ${prefix}battlefield4 text1 text2
-¦ • ${prefix}pubg text1 text2
+¦ • ${prefix}shadow (Text)
+¦ • ${prefix}cup (Text)
+¦ • ${prefix}cup 2 (Text)
+¦ • ${prefix}romance (Text)
+¦ • ${prefix}smoke (Text)
+¦ • ${prefix}burn paper (Text)
+¦ • ${prefix}love message (Text)
+¦ • ${prefix}under grass (Text)
+¦ • ${prefix}love (Text)
+¦ • ${prefix}coffe (Text)
+¦ • ${prefix}wood heart (Text)
+¦ • ${prefix}wooden board (Text)
+¦ • ${prefix}summer 3d (Text)
+¦ • ${prefix}wolf metal (Text)
+¦ • ${prefix}nature 3d (Text)
+¦ • ${prefix}under water (Text)
+¦ • ${prefix}golden rose (Text)
+¦ • ${prefix}summer nature (Text)
+¦ • ${prefix}letter leaves (Text)
+¦ • ${prefix}glowing neon (Text)
+¦ • ${prefix}fall leaves (Text)
+¦ • ${prefix}flamming (Text)
+¦ • ${prefix}harry potter (Text)
+¦ • ${prefix}carved wood (Text)
+¦ • ${prefix}tiktok (Text)
+¦ • ${prefix}arcade 8bit (Text)
+¦ • ${prefix}battlefield 4 (Text)
+¦ • ${prefix}pubg (Text)
+¦ • ${prefix}banner lol (Text)
+
 
 _Index of [3]_
     `
@@ -489,68 +492,58 @@ _Index of [3]_
 
 exports.menu4 = (pushname) => {
     return `
-Hallo ${pushname}
-¦--? Ephoto 360 ?
-¦ • ${prefix}wetglass text
-¦ • ${prefix}multicolor3d text
-¦ • ${prefix}watercolor text
-¦ • ${prefix}luxurygold text
-¦ • ${prefix}galaxywallpaper text
-¦ • ${prefix}lighttext text
-¦ • ${prefix}beautifulflower text
-¦• ${prefix}puppycute text
-¦• ${prefix}royaltext text
-¦• ${prefix}heartshaped text
-¦• ${prefix}birthdaycake text
-¦• ${prefix}galaxystyle text
-¦• ${prefix}hologram3d text
-¦ • ${prefix}greenneon text
-¦ • ${prefix}glossychrome text
-¦ • ${prefix}greenbush text
-¦ • ${prefix}metallogo text
-¦ • ${prefix}noeltext text
-¦ • ${prefix}glittergold text
-¦ • ${prefix}textcake text
-¦ • ${prefix}starsnight text
-¦ • ${prefix}wooden3d text
-¦ • ${prefix}textbyname text
-¦ • ${prefix}writegalacy text
-¦ • ${prefix}galaxybat text
-¦ • ${prefix}snow3d text
-¦ • ${prefix}birthdayday text
-¦ • ${prefix}goldplaybutton text
-¦ • ${prefix}silverplaybutton text
-¦ • ${prefix}freefire text
+
+*Ephoto 360 Maker*
+
+¦ • ${prefix}wet glass (Text)
+¦ • ${prefix}multicolor 3d (Text)
+¦ • ${prefix}water color (Text)
+¦ • ${prefix}luxury gold (Text)
+¦ • ${prefix}galaxy wallpaper (Text)
+¦ • ${prefix}light text (Text)
+¦ • ${prefix}beautiful flower (Text)
+¦ • ${prefix}puppy cute (Text)
+¦ • ${prefix}royal text (Text)
+¦ • ${prefix}heart shaped (Text)
+¦ • ${prefix}birthday cake (Text)
+¦ • ${prefix}galaxy style (Text)
+¦ • ${prefix}hologram 3d (Text)
+¦ • ${prefix}green neon (Text)
+¦ • ${prefix}glossy chrome (Text)
+¦ • ${prefix}green bush (Text)
+¦ • ${prefix}metal logo (Text)
+¦ • ${prefix}noel text (Text)
+¦ • ${prefix}glitter gold (Text)
+¦ • ${prefix}text cake (Text)
+¦ • ${prefix}stars night (Text)
+¦ • ${prefix}wooden 3d (Text)
+¦ • ${prefix}text by name (Text)
+¦ • ${prefix}write galaxy (Text)
+¦ • ${prefix}galaxy bat (Text)
+¦ • ${prefix}snow 3d (Text)
+¦ • ${prefix}birthday day (Text)
+¦ • ${prefix}gold play button (Text)
+¦ • ${prefix}silver play button (Text)
+¦ • ${prefix}free fire (Text)
+¦ • ${prefix}cartoon gravity (Text)
+¦ • ${prefix}anonym hacker (Text)
+
 
 _Index of [4]_
     `
 }
 
 
-exports.menu5 = (pushname) => {
+exports.menu5- = (pushname) => {
     return `
-Hallo ${pushname}
-¦--? Downloader ?
-¦ • ${prefix}ytsearch query
-¦ • ${prefix}ytplay query
-¦ • ${prefix}ytplay2 query
+
+*Downloader*
 ¦ • ${prefix}ytmp3 url_video
-¦ • ${prefix}ytmp32 url_video
 ¦ • ${prefix}ytmp4 url_video
-¦ • ${prefix}ytmp42 url_video
 ¦ • ${prefix}tiktoknowm url_video
 ¦ • ${prefix}tiktokmusic url_video
-¦ • ${prefix}igdl url_post
-¦ • ${prefix}fbdl url_video
-¦ • ${prefix}jooxplay query
-¦ • ${prefix}spotify url_music
-¦ • ${prefix}spotifysearch query
-¦ • ${prefix}pinterest query
-¦ • ${prefix}pinterestdl url_pinterest
-¦ • ${prefix}pixiv query
-¦ • ${prefix}pixivdl url_pixiv
-¦ • ${prefix}zippyshare url_zippyshare
-¦ • ${prefix}telesticker url_pack
+
+
 _Index of [5]_
     `
 }
@@ -559,7 +552,9 @@ exports.menu6 = (pushname) => {
     return `
 Hallo ${pushname}
 -----[ FUN / Game ]-----
+
 ¦ • ${prefix}tebakgambar
+¦ • *${prefix}nulis* text
 
 
 _Index of [6]_
@@ -571,15 +566,10 @@ exports.menu7 = (pushname) => {
 Hallo ${pushname}
 -----[ Menu Islam]-----
 ¦--? Islami ?
-¦ • ${prefix}listsurah
-¦ • ${prefix}asmaulhusna
-¦ • ${prefix}alquran no_surah
-¦ • ${prefix}alquran no_surah/no_ayat
-¦ • ${prefix}alquran no_surah/no_ayat1-no_ayat2
-¦ • ${prefix}alquranaudio no_surah
-¦ • ${prefix}alquranaudio no_surah/no_ayat
-¦ • ${prefix}kisahnabi nama_nabi
-¦ • ${prefix}jadwalsholat daerah
+¦ • ${prefix}randomquran
+¦ • ${prefix}
+
+Yang Lain Segera datang
 
 
 _Index of [7]_
