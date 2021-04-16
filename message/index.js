@@ -1432,8 +1432,76 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
 
 //Tambahan
 ///++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++            
-             // Islami //
-             case 'write':
+            case 'write':
+            case 'nulis':
+                if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
+                if (!q) return await bocchi.reply(from, ind.wrongFormat(), id)
+                if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
+                limit.addLimit(sender.id, _limit, isPremium, isOwner)
+                await bocchi.reply(from, ind.wait(), id)
+                console.log('Creating writing...')
+                await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/nulis?apikey=bb6f3ce7b412ee4bd062c567&text=${q}`, 'nulis.jpg', '', id)
+                    .then(() => console.log('Success sending write image!'))
+                    .catch(async (err) => {
+                        console.error(err)
+                        await bocchi.reply(from, 'Error!', id)
+                    })
+            break
+			
+			
+            
+                case 'shadow':
+                case 'cup':
+                case 'cup2':
+                case 'romance':
+                case 'smoke':
+                case 'burnpaper':
+                case 'lovemessage':
+                case 'undergrass':
+                case 'love':
+                case 'coffe':
+                case 'woodheart':
+                case 'woodenboard':
+                case 'summer3d':
+                case 'wolfmetal':
+                case 'nature3d':
+                case 'underwater':
+                case 'goldenrose':
+                case 'summernature':
+                case 'letterleaves':
+                case 'glowingneon':
+                case 'fallleaves':
+                case 'flamming':
+                case 'harrypotter':
+                case 'carvedwood':
+                    if (args.length == 0) return reply(`Example: ${prefix + command} LoL Human`)
+                    if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
+                    if (!q) return await bocchi.reply(from, ind.wrongFormat(), id)
+                    if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
+                    limit.addLimit(sender.id, _limit, isPremium, isOwner)
+                    await bocchi.reply(from, ind.wait(), id)
+                    console.log('Creating 3D text...')
+                    await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/photooxy1/${command}?apikey=bb6f3ce7b412ee4bd062c567&text=${q}`,`${q}.jpg`, '', id)
+                    console.log('Success creating 3D text!')
+				break
+				
+				case 'tiktok':
+                case 'arcade8bit':
+                case 'battlefield4':
+                case 'pubg':
+                    if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
+                    if (!q) return await bocchi.reply(from, ind.wrongFormat(), id)
+                    if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
+                    limit.addLimit(sender.id, _limit, isPremium, isOwner)
+                    const teks1 = q.substring(0, q.indexOf('|') - 1)
+                    const teks2 = q.substring(q.lastIndexOf('|') + 2)
+                    await bocchi.reply(from, ind.wait(), id)
+                    console.log('Creating 3D text...')
+                    await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/photooxy2/${command}?apikey=bb6f3ce7b412ee4bd062c567&text1=${teks1}&text2=${teks2}`,`pubg.jpg`, '', id)
+                    console.log('Success creating 3D text!')
+                break
+				
+				case 'write':
                 case 'nulis':
                     if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
                     if (!q) return await bocchi.reply(from, ind.wrongFormat(), id)
@@ -1481,50 +1549,48 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                 case 'summersand':
                 case 'horrorblood':
                 case 'thunder':
-                case 'pornhub':
-                case 'glitch':
-                case 'avenger':
-                case 'space':
-                case 'ninjalogo':
-                case 'marvelstudio':
-                case 'lionlogo':
-                case 'wolflogo':
-                case 'steel3d':
-                case 'wallgravity':
                     if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
                     if (!q) return await bocchi.reply(from, ind.wrongFormat(), id)
                     if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
                     limit.addLimit(sender.id, _limit, isPremium, isOwner)
                     await bocchi.reply(from, ind.wait(), id)
                     console.log('Creating 3D text...')
-                    await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/textprome/blackpink?apikey=bb6f3ce7b412ee4bd062c567&text=${q}`,`${q}.jpg`, '', id)
+                    await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/textprome/${command}?apikey=bb6f3ce7b412ee4bd062c567&text=${q}`,`${q}.jpg`, '', id)
                     console.log('Success creating 3D text!')
                 break
-                
-                //const teks1 = q.substring(0, q.indexOf('|') - 1)
-                //const teks2 = q.substring(q.lastIndexOf('|') + 2)
-
-                case 'tiktok':
-                case 'arcade8bit':
-                case 'battlefield4':
-                case 'pubg':
-                    if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
-                    if (!q) return await bocchi.reply(from, ind.wrongFormat(), id)
-                    if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
-                    limit.addLimit(sender.id, _limit, isPremium, isOwner)
-                    const teks1 = q.substring(0, q.indexOf('|') - 1)
-                    const teks2 = q.substring(q.lastIndexOf('|') + 2)
-                    await bocchi.reply(from, ind.wait(), id)
-                    console.log('Creating 3D text...')
-                    await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/photooxy2/pubg?apikey=bb6f3ce7b412ee4bd062c567&text1=${teks1}&text2=${teks2}`,`pubg.jpg`, '', id)
-                    console.log('Success creating 3D text!')
-                break
-
-
-                case 'undergrass':
-                case 'shadow':
-                case 'smoke':
-                case 'lovemessage':
+				
+                case 'wetglass':
+                case 'multicolor3d':
+                case 'watercolor':
+                case 'luxurygold':
+                case 'galaxywallpaper':
+                case 'lighttext':
+                case 'beautifulflower':
+                case 'puppycute':
+                case 'royaltext':
+                case 'heartshaped':
+                case 'birthdaycake':
+                case 'galaxystyle':
+                case 'hologram3d':
+                case 'greenneon':
+                case 'glossychrome':
+                case 'greenbush':
+                case 'metallogo':
+                case 'noeltext':
+                case 'glittergold':
+                case 'textcake':
+                case 'starsnight':
+                case 'wooden3d':
+                case 'textbyname':
+                case 'writegalaxy':
+                case 'galaxybat':
+                case 'snow3d':
+                case 'birthdayday':
+                case 'goldplaybutton':
+                case 'silverplaybutton':
+                case 'freefire':
+                case 'cartoongravity':
+                case 'anonymhacker':
                         if (args.length == 0) return reply(`Example: ${prefix + command} LoL Human`)
                         if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
                         if (!q) return await bocchi.reply(from, ind.wrongFormat(), id)
@@ -1532,12 +1598,16 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                         limit.addLimit(sender.id, _limit, isPremium, isOwner)
                         await bocchi.reply(from, ind.wait(), id)
                         console.log('Creating 3D text...')
-                        await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/photooxy1/${command}?apikey=bb6f3ce7b412ee4bd062c567&text=${q}`,`${q}.jpg`, '', id)
+                        await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/ephoto1/${command}?apikey=bb6f3ce7b412ee4bd062c567&text=${q}`,`${q}.jpg`, '', id)
                         console.log('Success creating 3D text!')
-                break
+                break				
+				
+				
+				
+				
+			
+			
 
-
-     
 
 
             
