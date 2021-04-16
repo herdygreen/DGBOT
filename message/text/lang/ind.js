@@ -2,17 +2,104 @@
 const { prefix } = require('../../../config.json')
 
 
+exports.wait = () => {
+    return `Mohon tunggu sebentar ~`
+}
+
+exports.ok = () => {
+    return `Ok Selesai Mantapkan~`
+}
+
+exports.wrongFormat = () => {
+    return `Upss Format km salah! n\ Silakan cek cara penggunaan di *${prefix}menu*.`
+}
+
+exports.emptyMess = () => {
+    return `Harap masukkan pesan yang ingin disampaikan!`
+}
+
+exports.cmdNotFound = (cmd) => {
+    return `Perinta *${prefix}${cmd}* tidak ditemukan! Perhatikan di #menu yah`
+}
+
+exports.blocked = (ownerNumber) => {
+    return `haduhh Be Smart Bro Bot Pasti tidak menerima panggilan. Karena kamu telah melanggar rules, maka kamu telah diblok!\n\nHarap hubungi owner: instragram.com/indobotwa`
+}
+
+exports.ownerOnly = () => {
+    return `Command ini khusus Owner-can!`
+}
+
+exports.doneOwner = () => {
+    return `Sudah selesai, Owner-sama~`
+}
+
+exports.groupOnly = () => {
+    return `Command ini hanya bisa digunakan di dalam grup!`
+}
+
+exports.adminOnly = () => {
+    return `Command ini hanya bisa digunakan oleh admin grup!`
+}
+
+exports.notNsfw = () => {
+    return `Command NSFW belum diaktifkan!`
+}
+
+exports.nsfwOn = () => {
+    return `Command NSFW berhasil *diaktifkan*!`
+}
+
+exports.nsfwOff = () => {
+    return `Command NSFW berhasil *dinonaktifkan*!`
+}
+
+exports.nsfwAlready = () => {
+    return `Command NSFW sudah diaktifkan sebelumnya.`
+}
+
+exports.addedGroup = (chat) => {
+    return `Terima kasih telah mengundangku, para member *${chat.contact.name}*!\n\nSilakan register dengan cara ketik:\n*${prefix}register* nama | umur`
+}
+
+exports.salah = () => {
+    return `harus pakai Tanda '|' contoh #daf Jojo | 18`
+}
+exports.nhFalse = () => {
+    return `Kode tidak valid!`
+}
+
+exports.listBlock = (blockNumber) => {
+    return `------[ HALL OF SHAME ]------\n\nTotal diblokir: *${blockNumber.length}* user\n`
+}
+
 exports.notPremium = () => {
     return `Maaf! Command ini khusus untuk user premium saja.`
 }
 
-exports.cmdNotFound = (cmd) => {
-    return `Perinta *${prefix}${cmd}* tidak ditemukan! Silakan Liat #Menu`
+exports.notAdmin = () => {
+    return `User bukan seorang admin!`
+}
+
+exports.adminAlready = () => {
+    return `Tidak dapat mem-promote user yang merupakan admin!`
+}
+
+exports.botNotPremium = () => {
+    return `Bot ini tidak mendukung command premium. Silakan hubungi pemilik bot ini.`
+}
+
+exports.botNotAdmin = () => {
+    return `Jadikan bot sebagai admin terlebih dahulu!`
+}
+
+exports.ytFound = (res) => {
+    return `*Video ditemukan!*\n\n➸ *Judul*: ${res.title}\n➸ *Deskripsi*:\n${res.desc}\n➸ *Durasi*: ${res.duration}\n\nMedia sedang dikirim, mohon tunggu...`
 }
 
 /*dengan format:\n*${prefix}register* nama | umur\n\n *CONTOH* : \n ${prefix}register Caca Cantika | 16  \n *inget pakai tanda* "|"*/
 exports.notRegistered = () => {
-    return `Kamu belum terdaftar \n\n Silakan Daftar Sesuai Totorial di YT kami #liatYT   `
+    return `Bot ini khusus Member Premium dan Kamu tidak terdaftar dalam member premium \n hubungi admin https://instagram.com/indobotwa \n untuk pemesaan member premium n\ untuk cek harga #harga  `
 }
 
 exports.registered = (name, age, userId, time, serial) => {
@@ -23,8 +110,181 @@ exports.registeredAlready = () => {
     return `Kamu sudah mendaftar sebelumnya. langsung Pakai aja ke menu`
 }
 
+exports.received = (pushname) => {
+    return `Halo ${pushname}!\nTerima kasih telah melapor, laporanmu akan kami segera terima.`
+}
+
+exports.daily = (time) => {
+    return `Oh Sorry Ka, Batas atau limit Pengunaan Km udah habis n\ Kamu Bisa beli Member Premium mulai dr 2k n\ (Bisa Dana Ovo Gopay Pulsa) n\ DM IG kita \n instragram.com\indobotwa  n\ Order hanya Via Instragram 
+	
+	`
+}
+
+exports.videoLimit = () => {
+    return `Upss Ukuran video terlalu besar!`
+}
+
+exports.joox = (result) => {
+    return `*Lagu ditemukan!*\n\n➸ *Penyanyi*: ${result[0].penyanyi}\n➸ *Judul*: ${result[0].judul}\n➸ *Album*: ${result[0].album}\n➸ *Ext*: ${result[0].ext}\n➸ *Size*: ${result[0].filesize}\n➸ *Durasi*: ${result[0].duration}\n\nMedia sedang dikirim, mohon tunggu...`
+}
+
+exports.gsm = (result) => {
+    return `➸ *Model HP*: ${result.title}\n➸ *Spesifikasi*: ${result.spec}`
+}
+
+exports.receipt = (result) => {
+    return `${result.title}\n\n${result.desc}\n\n*Bahan*: ${result.bahan}\n\n*Cara membuat*:\n${result.cara}`
+}
+
+exports.ytResult = (urlyt, title, channel, duration, views) => {
+    return `➸ *Judul*: ${title}\n➸ *Channel*: ${channel}\n➸ *Durasi*: ${duration}\n➸ *Views*: ${views}\n➸ *Link*: ${urlyt}`
+}
+
+exports.profile = (username, status, premi, benet, adm, level, requiredXp, xp) => {
+    return `-----[ *USER INFO* ]-----\n\n➸ *Username*: ${username}\n➸ *Status*: ${status}\n➸ *Premium*: ${premi}\n➸ *Banned*: ${benet}\n➸ *Admin*: ${adm}\n\n=_=_=_=_=_=_=_=_=_=_=_=_=\n\nYour progress:\n➸ *Level*: ${level}\n➸ *XP*: ${xp} / ${requiredXp}`
+}
+
+exports.detectorOn = (name, formattedTitle) => {
+    return `*「 ANTI GROUP LINK 」*\n\nPerhatian untuk penghuni grup ${(name || formattedTitle)}\nGrup ini memiliki anti-group link detector, apabila ada salah satu member mengirim group link di sini maka dia akan ter-kick secara otomatis.\n\nSekian terima kasih.\n- Admin ${(name || formattedTitle)}`
+}
+
+exports.detectorOff = () => {
+    return `Fitur anti-group link berhasil *dinonaktifkan*!`
+}
+
+exports.detectorOnAlready = () => {
+    return `Fitur anti-group link telah diaktifkan sebelumnya.`
+}
+
+exports.antiNsfwOn = (name, formattedTitle) => {
+    return `*「 ANTI NSFW LINK 」*\n\nPerhatian untuk penghuni grup ${(name || formattedTitle)}\nGrup ini memiliki anti-NSFW link detector, apabila ada salah satu member mengirim link NSFW/porn di sini maka dia akan ter-kick secara otomatis.\n\nSekian terima kasih.\n- Admin ${(name || formattedTitle)}`
+}
+
+exports.antiNsfwOff = () => {
+    return `Fitur anti-NSFW link berhasil *dinonaktifkan*!`
+}
+
+exports.antiNsfwOnAlready = () => {
+    return `Fitur anti-NSFW link telah diaktifkan sebelumnya.`
+}
+
+exports.linkDetected = () => {
+    return `*「 ANTI GROUP LINK 」*\n\nKamu mengirim link group chat!\nMaaf tapi kami harus mengeluarkan mu...\nSelamat tinggal~`
+}
+
+exports.levelingOn = () => {
+    return `Fitur leveling berhasil *diaktifkan*!`
+}
+
+exports.levelingOff = () => {
+    return `Fitur leveling berhasil *dinonaktifkan*!`
+}
+
+exports.levelingOnAlready = () => {
+    return `Fitur leveling telah diaktifkan sebelumnya.`
+}
+
+exports.levelingNotOn = () => {
+    return `Fitur leveling belum diaktifkan!`
+}
+
+exports.levelNull = () => {
+    return `Kamu belum memiliki level!`
+}
+
+exports.welcome = (event) => {
+    return `Selamat datang @${event.who.replace('@c.us', '')}!\n\nSemoga betah terus di grup kami ya~`
+}
+
+exports.welcomeOn = () => {
+    return `Fitur welcome berhasil *diaktifkan*!`
+}
+
+exports.welcomeOff = () => {
+    return `Fitur welcome berhasil *dinonaktifkan*!`
+}
+
+exports.welcomeOnAlready = () => {
+    return `Fitur welcome telah diaktifkan sebelumnya.`
+}
+
+exports.minimalDb = () => {
+    return `Perlu setidaknya *10* user yang memiliki level di database!`
+}
+
+exports.autoStikOn = () => {
+    return `Fitur auto-stiker berhasil *diaktifkan*!`
+}
+
+exports.autoStikOff = () => {
+    return `Fitur auto-stiker berhasil *dinonaktifkan*!`
+}
+
+exports.autoStikOnAlready = () => {
+    return `Fitur auto-stiker telah diaktifkan sebelumnya.`
+}
+
+exports.afkOn = (pushname, reason) => {
+    return `Fitur AFK berhasil *diaktifkan*!\n\n➸ *Username*: ${pushname}\n➸ *Alasan*: ${reason}`
+}
+
+exports.afkOnAlready = () => {
+    return `Fitur AFK telah diaktifkan sebelumnya.`
+}
+
+exports.afkMentioned = (getReason, getTime) => {
+    return `*「 AFK MODE 」*\n\nSssttt! Orangnya lagi AFK, jangan diganggu!\n➸ *Alasan*: ${getReason}\n➸ *Sejak*: ${getTime}`
+}
+
+exports.afkDone = (pushname) => {
+    return `*${pushname}* telah kembali dari AFK! Selamat datang kembali~`
+}
+
+exports.gcMute = () => {
+    return `*「 MUTED 」*\n\nHanya admin yang dapat mengirim pesan ke grup ini.`
+}
+
+exports.gcUnmute = () => {
+    return `*「 UNMUTED 」*\n\nSekarang semua anggota dapat mengirim chat di grup ini.`
+}
+
+exports.notNum = (q) => {
+    return `"${q}", bukan angka!`
+}
+
+exports.playstore = (app_id, title, developer, description, price, free) => {
+    return `➸ *Nama*: ${title}\n➸ *ID*: ${app_id}\n➸ *Developer*: ${developer}\n➸ *Gratis*: ${free}\n➸ *Harga*: ${price}\n➸ *Deskripsi*: ${description}`
+}
+
+exports.shopee = (nama, harga, terjual, shop_location, description, link_product) => {
+    return `➸ *Nama*: ${nama}\n➸ *Harga*: ${harga}\n➸ *Terjual*: ${terjual}\n➸ *Lokasi*: ${shop_location}\n➸ *Link produk*: ${link_product}\n➸ *Deskripsi*: ${description}`
+}
+
+exports.pc = (pushname) => {
+    return `*「 REGISTRATION 」*\n\nAkun kamu berhasil terdaftar! Silakan cek pesan ku di private chat mu ya ${pushname}~ :3\n\nNote:\nJika kamu tidak menerima pesan, artinya kamu belum save nomor bot.`
+}
+
 exports.registeredFound = (name, age, time, serial, userId) => {
     return `*「 REGISTERED 」*\n\nAkun ditemukan!\n\n➸ *Nama*: ${name}\n➸ *Umur*: ${age}\n➸ *ID*: ${userId}\n➸ *Waktu pendaftaran*: ${time}\n➸ *Serial*: ${serial}`
+}
+
+exports.registeredNotFound = (serial) => {
+    return `Akun dengan serial: *${serial}* tidak ditemukan!`
+}
+
+exports.ytPlay = (result) => {
+    return `*「 PLAY 」*\n\n➸ *Judul*: ${result.title}\n➸ *Durasi*: ${result.duration}\n➸ *Link*: ${result.url}\n\nMedia sedang dikirim, mohon tunggu...`
+}
+exports.pcOnly = () => {
+    return `Command ini hanya bisa digunakan di dalam private chat saja!`
+}
+
+exports.linkNsfw = () => {
+    return `*「 ANTI NSFW LINK 」*\n\nKamu telah mengirim link NSFW!\nMaaf, tapi aku harus mengeluarkan mu...`
+}
+
+exports.ageOld = () => {
+    return `Kamu terlalu tua untuk menggunakan fitur ini! Mohon kembali ke masa muda anda agar bisa menggunakannya.`
 }
 
 
