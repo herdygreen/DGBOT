@@ -17,7 +17,7 @@ ____________
 *Menu Stiker Maker*🤖
 #sticker (photo)
 #stickergif (vidio/gif)
-#attp (text)
+#ttx (text)
 
 
 kostom stiker kirim photo dengan
