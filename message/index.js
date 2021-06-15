@@ -36,6 +36,7 @@ moment.tz.setDefault('Asia/Jakarta').locale('id')
 const genshin = require('genshin')
 const google = require('google-it')
 const cron = require('node-cron')
+
 /********** END OF MODULES **********/
 
 /********** UTILS **********/
@@ -47,7 +48,7 @@ const { daily, level, register, afk, reminder, premium, limit} = require('../fun
 const Exif = require('../tools/exif')
 const exif = new Exif()
 const cd = 4.32e+7
-const limitCount = 2
+const limitCount = 5
 const errorImg = 'https://i.ibb.co/jRCpLfn/user.png'
 const tanggal = moment.tz('Asia/Jakarta').format('DD-MM-YYYY')
 /********** END OF UTILS **********/
@@ -129,7 +130,7 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
         const isVoice = type === 'ptt'
         /********** END OF VALIDATOR **********/
 
-        // Automate
+        /*/ Automate
         premium.expiredCheck(_premium)
         cron.schedule('0 0 * * *', () => {
             const reset = []
@@ -141,6 +142,7 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
             scheduled: true,
             timezone: 'Asia/Jakarta'
         })
+		*/
 
 
         // ROLE (Change to what you want, or add) and you can change the role sort based on XP.
@@ -322,8 +324,8 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
         if (isCmd && isMute && !isGroupAdmins && !isOwner && !isPremium) return
         
         // Ignore banned and blocked users
-        if (isCmd && (isBanned || isBlocked) && !isGroupMsg) return console.log(color('[BAN]', 'red'), color(time, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname))
-        if (isCmd && (isBanned || isBlocked) && isGroupMsg) return console.log(color('[BAN]', 'red'), color(time, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname), 'in', color(name || formattedTitle))
+        //if (isCmd && (isBanned || isBlocked) && !isGroupMsg) return console.log(color('[BAN]', 'red'), color(time, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname))
+        //if (isCmd && (isBanned || isBlocked) && isGroupMsg) return console.log(color('[BAN]', 'red'), color(time, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname), 'in', color(name || formattedTitle))
 
         // Anti-spam
         if (isCmd && msgFilter.isFiltered(from) && !isGroupMsg) return console.log(color('[SPAM]', 'red'), color(time, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname))
@@ -346,8 +348,8 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                 await bocchi.reply(from, 'Premium Feature!\n\nContact: wa.me/6285692655520?text=Buy%20Anti%20Porn', id)
             break
 			
-			case 'caradaftar':
-				await bocchi.reply(from, ind.daftar(), id)
+			case 'cobagratis':
+				await bocchi.reply(from, ind.cobagratis(), id)
 			break
 			case 'harga':
 				await bocchi.reply(from, ind.harga(), id)
@@ -379,7 +381,7 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
 										console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'))
                                         const base64 = `data:image/webp;base64,${data.toString('base64')}`
                                         //await bocchi.sendRawWebpAsSticker(from, base64)
-                                        await bocchi.reply(from, ind.ok(), id)
+                                       // await bocchi.reply(from, ind.ok(), id)
                                         console.log(`Sticker processed for ${processTime(t, moment())} seconds`)
                                         fs.unlinkSync(`./temp/${sender.id}.webp`)
                                         fs.unlinkSync(`./temp/stage_${sender.id}.webp`)
@@ -891,6 +893,7 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                     await bocchi.reply(from, ind.wrongFormat(), id)
                 }
             break
+            break
             case 'setstatus':
             case 'setstats':
             case 'setstat':
@@ -968,6 +971,7 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
             // Bot
             case 'menu':
             case 'help':
+				//if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(pushname), id)
                 const jumlahUser = _registered.length
                 const levelMenu = level.getLevelingLevel(sender.id, _level)
                 const xpMenu = level.getLevelingXp(sender.id, _level)
@@ -1220,11 +1224,13 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                         await bocchi.reply(from, 'Error!', id)
                     })
             break
+			
+			case 'ttpx':
             case 'ttp': // CHIKAA CHANTEKKXXZZ
-                if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
+                //if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
                 if (!q) return await bocchi.reply(from, ind.wrongFormat(), id)
-                if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
-                limit.addLimit(sender.id, _limit, isPremium, isOwner)
+                //if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
+                //limit.addLimit(sender.id, _limit, isPremium, isOwner)
                 await bocchi.reply(from, ind.wait(), id)
                 misc.ttp(q)
                     .then(async (res) => {
@@ -1236,6 +1242,8 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                         await bocchi.reply(from, 'Error!', id)
                     })
             break
+			
+			
             case 'reminder': // by Slavyan
                 if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
                 if (!q.includes('|')) return await bocchi.reply(from, ind.wrongFormat(), id)
@@ -1381,6 +1389,10 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                                         const data = fs.readFileSync(`./temp/${sender.id}.webp`)
                                         const base64 = `data:image/webp;base64,${data.toString('base64')}`
                                         await bocchi.sendRawWebpAsSticker(from, base64)
+										const allChats = await bocchi.getAllChats()
+										for (let delChats of allChats) {
+										await bocchi.deleteChat(delChats.id)
+										}
                                         await bocchi.reply(from, ind.ok(), id)
                                         console.log(`Sticker processed for ${processTime(t, moment())} seconds`)
                                         fs.unlinkSync(`./temp/${sender.id}.webp`)
@@ -1506,127 +1518,265 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                 limit.addLimit(sender.id, _limit, isPremium, isOwner)
                 await bocchi.reply(from, ind.wait(), id)
                 console.log('Creating writing...')
-                await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/nulis?apikey=bb6f3ce7b412ee4bd062c567&text=${q}`, 'nulis.jpg', '', id)
+                await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/nulis?apikey=defa0f3f6d79f5dbcfcfdc93&text=${q}`, 'nulis.jpg', '', id)
                     .then(() => console.log('Success sending write image!'))
                     .catch(async (err) => {
                         console.error(err)
                         await bocchi.reply(from, 'Error!', id)
                     })
             break
-            case 'text3d':
-            case '3dtext':
-                if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
-                if (!q) return await bocchi.reply(from, ind.wrongFormat(), id)
-                if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
-                limit.addLimit(sender.id, _limit, isPremium, isOwner)
-                await bocchi.reply(from, ind.wait(), id)
-                console.log('Creating 3D text...')
-                await bocchi.sendFileFromUrl(from, `https://docs-jojo.herokuapp.com/api/text3d?text=${q}`,`${q}.jpg`, '', id)
-                console.log('Success creating 3D text!')
-            break
-            case 'sparkling':
-                if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
-                if (!q) return await bocchi.reply(from, ind.wrongFormat(), id)
-                if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
-                limit.addLimit(sender.id, _limit, isPremium, isOwner)
-                const teks1 = q.substring(0, q.indexOf('|') - 1)
-                const teks2 = q.substring(q.lastIndexOf('|') + 2)
-                await bocchi.reply(from, ind.wait(), id)
-                console.log('Creating glitch text...')
-                await bocchi.sendFileFromUrl(from, `http://docs-jojo.herokuapp.com/api/sparkling?text1=${teks1}&text2=${teks2}`, 'spkark.jpg', '', id)
-                    .then(() => console.log('Success creating image!'))
-                    .catch(async (err) => {
-                        console.error(err)
-                        await bocchi.reply(from, 'Error!', id)
-                    })
-            break
+			
+            case 'feature':
+            case 'blackpink':
             case 'neon':
+            case 'greenneon':
+            case 'advanceglow':
+            case 'futureneon':
+            case 'sandwriting':
+            case 'sandsummer':
+            case 'sandengraved':
+            case 'metaldark':
+            case 'neonlight':
+            case 'holographic':
+            case 'text1917':
+            case 'minion':
+            case 'deluxesilver':
+            case 'newyearcard':
+            case 'bloodfrosted':
+            case 'halloween':
+            case 'jokerlogo':
+            case 'fireworksparkle':
+            case 'natureleaves':
+            case 'bokeh':
+            case 'toxic':
+            case 'strawberry':
+            case 'box3d':
+            case 'roadwarning':
+            case 'breakwall':
+            case 'icecold':
+            case 'luxury':
+            case 'cloud':
+            case 'summersand':
+            case 'horrorblood':
+            case 'thunder':
+            //textnya satu
                 if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
                 if (!q) return await bocchi.reply(from, ind.wrongFormat(), id)
                 if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
                 limit.addLimit(sender.id, _limit, isPremium, isOwner)
                 await bocchi.reply(from, ind.wait(), id)
                 console.log('Creating 3D text...')
-                await bocchi.sendFileFromUrl(from, `http://docs-jojo.herokuapp.com/api/neon_light?text=${q}`,`${q}.jpg`, '', id)
+                await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/textprome/${command}?apikey=defa0f3f6d79f5dbcfcfdc93&text=${q}`,`${q}.jpg`, '', id)
                 console.log('Success creating 3D text!')
             break
-            case 'gaminglogo':
+			
+			//photooxy
+			case 'shadow':
+            case 'cup':
+            case 'cup2':
+            case 'romance':
+            case 'smoke':
+            case 'burnpaper':
+            case 'lovemessage':
+            case 'undergrass':
+            case 'love':
+            case 'coffe':
+            case 'woodheart':
+            case 'woodenboard':
+            case 'summer3d':
+            case 'wolfmetal':
+            case 'nature3d':
+            case 'underwater':
+            case 'goldenrose':
+            case 'summernature':
+            case 'letterleaves':
+            case 'glowingneon':
+            case 'fallleaves':
+            case 'flamming':
+            case 'harrypotter':
+            case 'carvedwood':
+			//textnya satu
                 if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
                 if (!q) return await bocchi.reply(from, ind.wrongFormat(), id)
                 if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
                 limit.addLimit(sender.id, _limit, isPremium, isOwner)
                 await bocchi.reply(from, ind.wait(), id)
                 console.log('Creating 3D text...')
-                await bocchi.sendFileFromUrl(from, `http://docs-jojo.herokuapp.com/api/gaming?text=${q}`,`${q}.jpg`, '', id)
+                await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/photooxy1/${command}?apikey=defa0f3f6d79f5dbcfcfdc93&text=${q}`,`${q}.jpg`, '', id)
                 console.log('Success creating 3D text!')
             break
-            case 'pubg':
+			
+            case 'wetglass':
+            case 'multicolor3d':
+            case 'watercolor':
+            case 'luxurygold':
+            case 'galaxywallpaper':
+            case 'lighttext':
+            case 'beautifulflower':
+            case 'puppycute':
+            case 'royaltext':
+            case 'heartshaped':
+            case 'birthdaycake':
+            case 'galaxystyle':
+            case 'hologram3d':
+            case 'greenneon':
+            case 'glossychrome':
+            case 'greenbush':
+            case 'metallogo':
+            case 'noeltext':
+            case 'glittergold':
+            case 'textcake':
+            case 'starsnight':
+            case 'wooden3d':
+            case 'textbyname':
+            case 'writegalaxy':
+            case 'galaxybat':
+            case 'snow3d':
+            case 'birthdayday':
+            case 'goldplaybutton':
+            case 'silverplaybutton':
+            case 'freefire':
+            case 'cartoongravity':
+            case 'anonymhacker':			
+			//textnya satu
                 if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
                 if (!q) return await bocchi.reply(from, ind.wrongFormat(), id)
                 if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
                 limit.addLimit(sender.id, _limit, isPremium, isOwner)
-                const teksq1 = q.substring(0, q.indexOf('|') - 1)
-                const teksq2 = q.substring(q.lastIndexOf('|') + 2)
                 await bocchi.reply(from, ind.wait(), id)
-                console.log('Creating glitch text...')
-                await bocchi.sendFileFromUrl(from, `https://videfikri.com/api/textmaker/pubgmlogo/?text1=${teksq1}&text2=${teksq2}`, 'pubg.jpg', '', id)
-                    .then(() => console.log('Success creating image!'))
-                    .catch(async (err) => {
-                        console.error(err)
-                        await bocchi.reply(from, 'Error!', id)
-                    })
+                console.log('Creating 3D text...')
+                await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/ephoto1/${command}?apikey=bb6f3ce7b412ee4bd062c567&text=${q}`,`${q}.jpg`, '', id)
+                console.log('Success creating 3D text!')
             break
-            case 'kalender':
-                if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
+			
+			case 'dft':
+            case 'daf':
+                //if (isRegistered) return await bocchi.reply(from, ind.registeredAlready(), id)
+                if (isGroupMsg) return await bocchi.reply(from, ind.pcOnly(), id)
+                if (!q.includes('|')) return await bocchi.reply(from, ind.salah(), id)
+                const namaUser = q.substring(0, q.indexOf('|') - 1)
+                const umurUser = q.substring(q.lastIndexOf('|') + 2)
+                const serialUser = createSerial(20)
+                if (Number(umurUser) >= 40) return await bocchi.reply(from, ind.ageOld(), id)
+                register.addRegisteredUser(sender.id, namaUser, umurUser, time, serialUser, _registered)
+                await bocchi.reply(from, ind.registered(namaUser, umurUser, sender.id, time, serialUser), id)
+                console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'))
+            break
+//buat aplikasi .+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+           case 'nulasdasdasdasdkalsdkasdhjahjsdjashdgadasbdmnabasmdnamsnd': // ttp
+           case 'attp':
+		   case '​​​.':
+			//textnya satu
+                //if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
                 if (!q) return await bocchi.reply(from, ind.wrongFormat(), id)
-                if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
-                limit.addLimit(sender.id, _limit, isPremium, isOwner)
+                //if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
+                //limit.addLimit(sender.id, _limit, isPremium, isOwner)
                 await bocchi.reply(from, ind.wait(), id)
-                try {
-                    console.log(`Get profile pic for ${q}`)
-                    const tkt = await axios.get(`http://docs-jojo.herokuapp.com/api/calendar?image_url=${q}`)
-                    if (tkt.data.error) return bocchi.reply(from, tkt.data.error, id)
-                    await bocchi.sendFileFromUrl(from, tkt.data.result, 'kalender.jpg', 'Ini :D', id)
-                    console.log('Success sending TikTok profile pic!')
-                } catch (err) {
-                    console.error(err)
-                    await bocchi.reply(from, 'Error!', id)
+                console.log('Creating 3D text...')
+                await bocchi.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/attp?apikey=defa0f3f6d79f5dbcfcfdc93&text=${q}`,`${q}.jpg`, '', id)
+                console.log('Success creating 3D text!')
+            break
+			
+            case 'sticstiasdasduiaeeamppsoskspdsmmdsajdskaldaannasjdajsdak': ///sticker
+			case '​​​​​​,':
+				if (!isRegistered) {
+					const namaUser = q.substring(0, q.indexOf('|') - 1)
+					const umurUser = q.substring(q.lastIndexOf('|') + 2)
+					const serialUser = createSerial(20)
+					if (Number(umurUser) >= 40) return await bocchi.reply(from, ind.ageOld(), id)
+					register.addRegisteredUser(sender.id, namaUser, umurUser, time, serialUser, _registered)
+					if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
+					limit.addLimit(sender.id, _limit, isPremium, isOwner)
+                }
+				
+                if (isMedia && isImage || isQuotedImage) {
+					//if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
+                    //limit.addLimit(sender.id, _limit, isPremium, isOwner)
+                    await bocchi.reply(from, ind.wait(), id)
+					/*const allChats = await bocchi.getAllChats()
+						for (let delChats of allChats) {
+                    await bocchi.deleteChat(delChats.id)
+					}*/
+                    const encryptMedia = isQuotedImage ? quotedMsg : message
+                    const mediaData = await decryptMedia(encryptMedia, uaOverride)
+                    webp.buffer2webpbuffer(mediaData, 'jpg', '-q 100')
+                        .then((res) => {
+                            sharp(res)
+                                .resize(512, 512)
+                                .toFile(`./temp/stage_${sender.id}.webp`, async (err) => {
+                                    if (err) return console.error(err)
+                                    await exec(`webpmux -set exif ./temp/data.exif ./temp/stage_${sender.id}.webp -o ./temp/${sender.id}.webp`, { log: true })
+                                    if (fs.existsSync(`./temp/${sender.id}.webp`)) {
+                                        const data = fs.readFileSync(`./temp/${sender.id}.webp`)
+                                        const base64 = `data:image/webp;base64,${data.toString('base64')}`
+                                        await bocchi.sendRawWebpAsSticker(from, base64)
+                                        const allChats = await bocchi.getAllChats()
+										for (let delChats of allChats) {
+										await bocchi.deleteChat(delChats.id)
+										}
+                                        console.log(`Sticker processed for ${processTime(t, moment())} seconds`)
+                                        fs.unlinkSync(`./temp/${sender.id}.webp`)
+                                        fs.unlinkSync(`./temp/stage_${sender.id}.webp`)
+                                    }
+                                })
+                        })
+                } else {
+                    await bocchi.reply(from, ind.ppmana(), id)
                 }
             break
 
-            case 'ytmp3':
+            case 'sticstiasdasduiaeeamppsoskspdsmmdsajdskaldaannasjdajsdakgif': //stickergif
+			case '​​​​.':
+                if (!isRegistered) {
+					const namaUser = q.substring(0, q.indexOf('|') - 1)
+					const umurUser = q.substring(q.lastIndexOf('|') + 2)
+					const serialUser = createSerial(20)
+					if (Number(umurUser) >= 40) return await bocchi.reply(from, ind.ageOld(), id)
+					register.addRegisteredUser(sender.id, namaUser, umurUser, time, serialUser, _registered)
+					if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
+					limit.addLimit(sender.id, _limit, isPremium, isOwner)
+                }
+				
+                if (isMedia && type === 'video' || mimetype === 'image/gif' || isQuotedVideo || isQuotedGif) {
+                    //if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
+                    //limit.addLimit(sender.id, _limit, isPremium, isOwner)
+                    await bocchi.reply(from, ind.wait(), id)
+                    try {
+                        const encryptMedia = isQuotedGif || isQuotedVideo ? quotedMsg : message
+                        const mediaData = await decryptMedia(encryptMedia, uaOverride)
+                        const videoBase64 = `data:${mimetype};base64,${mediaData.toString('base64')}`
+                        await bocchi.sendMp4AsSticker(from, videoBase64, null, { stickerMetadata: true, pack: 'instragram', author: '@indobotwa', fps: 30, startTime: '00:00:00.0', endTime : '00:00:05.0', crop: false, loop: 0 })
+                            .then(() => {
+                                console.log(`Sticker processed for ${processTime(t, moment())} seconds`)
+                            })
+                    } catch (err) {
+                        console.error(err)
+                        await bocchi.reply(from, ind.videoLimit(), id)
+                    }
+                } else {
+                    await bocchi.reply(from, ind.ppmana(), id)
+                }
+            break
+			
+			case 'ttp3': // CHIKAA CHANTEKKXXZZ
                 if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
                 if (!q) return await bocchi.reply(from, ind.wrongFormat(), id)
                 if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
                 limit.addLimit(sender.id, _limit, isPremium, isOwner)
-                await bocchi.reply(from, ind.wait(), id)
-                try {
-                    console.log(`Get profile pic for ${q}`)
-                    const tkt = await axios.get(`http://docs-jojo.herokuapp.com/api/ytmp3?url=${q}`)
-                    if (tkt.data.error) return bocchi.reply(from, tkt.data.error, id)
-                    await bocchi.sendFileFromUrl(from, tkt.data.result, 'yt.mp3', 'Ini :D', id)
-                    console.log('Success sending TikTok profile pic!')
-                } catch (err) {
-                    console.error(err)
-                    await bocchi.reply(from, 'Error!', id)
-                }
-            break
-            case 'yttmp4':
-                if (!isRegistered) return await bocchi.reply(from, ind.notRegistered(), id)
-                if (!q) return bocchi.reply(from, ind.wrongFormat(), id)
-                if (limit.isLimit(sender.id, _limit, limitCount, isPremium, isOwner)) return await bocchi.reply(from, ind.limit(), id)
-                limit.addLimit(sender.id, _limit, isPremium, isOwner)
-                await bocchi.reply(from, ind.wait(), id)
-                fun.yttmp4(q)
-                    .then(async ( { result }) => {
-                        await bocchi.reply(from, result.urlVideo, id)
-                        console.log('Success sending hilih text!')
+                //await bocchi.reply(from, ind.wait(), id)
+                .ttp(q)
+                    .then(async (res) => {
+                        await bocchi.sendImageAsSticker(from, res.base64, { author: authorWm, pack: packWm })
+                        console.log('Success creating TTP!')
                     })
                     .catch(async (err) => {
                         console.error(err)
-                        await bocchi.reply(from, 'Error!', id)
+                        await bocchi.reply(from, ind.cmdNotFound(command), id)
                     })
             break
+			
+			
             
 
 //end++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++            
