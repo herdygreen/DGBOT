@@ -4,14 +4,7 @@ const { prefix } = require('../../../config.json')
 /*MENU UTAMA BOT---------------------------------------------------------------------*/
 exports.menu = (jumlahUser, level, xp, role, pushname, requiredXp, premium) => {
     return `
-------[ Hallo Teman Bot  ]-----
-======================
-➸ *Name*: ${pushname}
-➸ *Level*: ${level}
-➸ *XP*: ${xp} / ${requiredXp}
-➸ *Role*: ${role}
-➸ *Premium*: ${premium}
-======================
+Hallo ${pushname}, Status Premium ${premium}
 Berikut adalah menu Utama Bot Kita: 😊
 ____________
 *Menu Stiker Maker*🤖
@@ -19,13 +12,9 @@ ____________
 #stickergif (vidio/gif)
 #ttx (text)
 
-
 kostom stiker kirim photo dengan
-#stickermeme (teks1) |  (teks2)
-
 #stickerwm (teks1) |  (teks2)
 buat stiker dengan info diksripsi punya km
-
 
 ____________
 *Menu Buat Photo Keren dari Text*👩🏼‍🎨
