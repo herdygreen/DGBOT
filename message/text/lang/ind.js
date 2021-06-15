@@ -2,41 +2,80 @@
 const { prefix } = require('../../../config.json')
 
 exports.wait = () => {
-    return `Mohon tunggu sebentar 😊  ~`
+    return `Mohon tunggu sebentar ~`
+}
+exports.cll = () => {
+    return `bot sudah lebih cepat ~`
 }
 
-exports.ytFound = (res) => {
-    return `*Video ditemukan!*\n\n➸ *Judul*: ${res.title}\n➸ *Deskripsi*:\n${res.desc}\n➸ *Durasi*: ${res.duration}\n\nMedia sedang dikirim, mohon tunggu...`
+exports.ok = () => {
+    return `Ok Selesai Mantapkan~`
 }
-
-exports.ss = () => {
-    return `hallo   SS Bukti Like dan Subscribe nya mana Bro ☹️ .`
-}
-
-
-exports.ppmna = () => {
-    return `Photonya/video yg mau dijadiin sticker mana ??😊 *.`
+exports.manateks = () => {
+    return `Teks nya mana ?`
 }
 
 exports.wrongFormat = () => {
-    return `Upss Format km salah! n\ Silakan cek cara penggunaan di *${prefix}menu*.`
+    return `Upss Format km salah! n\ Silakan Gunakan Aplikasi #cekaplikasi*.`
 }
 
+exports.emptyMess = () => {
+    return `Harap masukkan pesan yang ingin disampaikan!`
+}
 
 exports.cmdNotFound = (cmd) => {
-    return `Perinta *${prefix}${cmd}* tidak ditemukan! Perhatikan Format Perintah di #menu yah`
+    return `Perinta *${prefix}${cmd}* Salah Silakan Gunakan Aplikasi #cekaplikasi`
 }
 
 exports.blocked = (ownerNumber) => {
-    return `haduhh Be Smart Bro Bot Pasti tidak menerima panggilan. Karena kamu telah telpon, maka kamu telah diblok!\n\nHarap hubungi owner: instragram.com/indobotwa`
+    return `haduhh Be Smart Bro Bot Pasti tidak menerima panggilan. Karena kamu Telpon, maka kamu telah diblok!\n\nHarap hubungi owner: instragram.com/indobotwa untuk membuka blokir`
 }
 
 exports.ownerOnly = () => {
-    return `hallo   Command ini khusus Owner-can!`
+    return `Command ini khusus Owner-can!`
 }
 
 exports.doneOwner = () => {
-    return `Terima kasih `
+    return `Sudah selesai, Owner-sama~`
+}
+
+exports.groupOnly = () => {
+    return `Command ini hanya bisa digunakan di dalam grup!`
+}
+
+exports.adminOnly = () => {
+    return `Command ini hanya bisa digunakan oleh admin grup!`
+}
+
+exports.notNsfw = () => {
+    return `Command NSFW belum diaktifkan!`
+}
+
+exports.nsfwOn = () => {
+    return `Command NSFW berhasil *diaktifkan*!`
+}
+
+exports.nsfwOff = () => {
+    return `Command NSFW berhasil *dinonaktifkan*!`
+}
+
+exports.nsfwAlready = () => {
+    return `Command NSFW sudah diaktifkan sebelumnya.`
+}
+
+exports.addedGroup = (chat) => {
+    return `Terima kasih telah mengundangku, para member *${chat.contact.name}*!\n\nSilakan register dengan cara ketik:\n*${prefix}register* nama | umur`
+}
+
+exports.salah = () => {
+    return `harus pakai Tanda '|' contoh #daf Jojo | 18`
+}
+exports.nhFalse = () => {
+    return `Kode tidak valid!`
+}
+
+exports.listBlock = (blockNumber) => {
+    return `------[ HALL OF SHAME ]------\n\nTotal diblokir: *${blockNumber.length}* user\n`
 }
 
 exports.notPremium = () => {
@@ -59,62 +98,77 @@ exports.botNotAdmin = () => {
     return `Jadikan bot sebagai admin terlebih dahulu!`
 }
 
-exports.gratis = () => {
+exports.cobagratis = (res) => {
     return `
-Cara Mendapatkan Akses Premium Gratis
-1. Buat Story Instragran dan Tag @indobotwa denga photo ini 
-https://bit.ly/32vMxGJ 
+untuk mencoba gratis
+1. Screenshot (SS) bukti like dan subscribe channel ini
+https://www.youtube.com/watch?v=P5CY7fPcwS8&t
 
-Dan kamu akan di DM Admin untuk di Kasih Akses Premium :)
+2. Kirim SS kamu dengan Deskripsi #udahbos
 
-syarat:
-✅*Story tidak boleh dihapus*
-✅*Follower diatas 300*
 `
-}
-
-exports.daftar = (jumlahUser, level, xp, role, pushname, requiredXp, premium) => {
-    return `
-hallo  
-*Begini Cara Daftarnya*
-
-1.Subscribe nyalakan Lonceng Youtube Kami
-
-2. screenshot (ss) Video Di menit 01:00
-https://www.youtube.com/watch?v=P5CY7fPcwS8&t=14s
-
-5. Kirim  SS km dengan diskripsi #udahbos
-
-4. dan Bot akan meverifikasi dengan cepat
-    
-    `
 }
 
 /*dengan format:\n*${prefix}register* nama | umur\n\n *CONTOH* : \n ${prefix}register Caca Cantika | 16  \n *inget pakai tanda* "|"*/
 exports.notRegistered = () => {
-    return `hallo Kamu belum terdaftar di database!\n\n Silakan ketik #caradaftar `
+    return `
+
+Kamu Belum terdaftar 
+Daftar Premium atau gunakan Aplikasi 
+
+*kamu bisa coba gratis*
+ketik
+#cobagratis
+
+  `
 }
 
 exports.registered = (name, age, userId, time, serial) => {
-    return `*「 REGISTRATION 」*\n\n Hallo Ka Pendaftaran kamu sudah dterima dengan data n\ ➸ *Nama*: ${name}\n➸ *Umur*: ${age}\n➸ *ID*: ${userId}\n➸ *Waktu pendaftaran*: ${time}\n➸\n\nCatatan:\n Follow Sosial Media kita untuk liat info Update Seputar Bot @indobotwa \n\nKetik *${prefix}rules* terlebih dahulu ya~`
+    return `*「 Suckses 」*\n\n Hallo Ka Pendaftaran kamu sudah dterima \n *Jangan Pernah Telp Bot Karena ada Fitur Auto Blok yg rugi km*  n\ untuk liat menu #menu ~`
 }
 
 exports.registeredAlready = () => {
-    return `hallo   Kamu sudah mendaftar sebelumnya. langsung Pakai aja ke menu`
+    return `Kamu sudah mendaftar sebelumnya. langsung Pakai aja ke menu`
 }
 
-exports.received = (pushname) => {
-    return `Halo  !\nTerima kasih telah melapor, laporanmu akan kami segera terima.`
+exports.cekaplikasi = (pushname) => {
+    return `
+Install Aplikasi INDOBOTWA
+
+Download On Google Play Store
+https://play.google.com/store/search?q=indobotwa&c=apps
+
+Wajib Kasih Komentar dan Bintang 5
+jika tidak km akan diblok
+`
 }
 
 exports.daily = (time) => {
-    return `Oh Sorry Ka hallo  , Batas atau limit Pengunaan Km udah habis n\ Kamu Bisa Lakukan Ini n\ 1. Dafyat Member Premium mulai dr 2k n\ (BISA Dana Ovo Gopay Pulsa) n\ DM IG kita \n instragram.com\indobotwa  n\ Order hanya Via Instragram 
+    return `
+
+masa gratis km habis
+
+Daftar Premium atau Gunakan Aplikasi
+
+Kamu bisa Install Aplikasi INDOBOTWA
+untuk akses gratis Fitur Bot sepuasnya
+aplikasi sudah tersedia di Playstore
+
+Sorry you can See Indobotwa Menu in Aplikasi 
+
+Download On Google Play Store
+https://play.google.com/store/search?q=indobotwa&c=apps
+
+Wajib Kasih Komentar dan Bintang 5
+jika tidak km akan diblok
+
+❏ *_*
 	
 	`
 }
 
-exports.videoLimit = (jumlahUser, level, xp, role, pushname, requiredXp, premium) => {
-    return `Upss Ukuran video terlalu besar  !`
+exports.videoLimit = () => {
+    return `Upss Ukuran video terlalu besar!`
 }
 
 exports.joox = (result) => {
@@ -218,7 +272,7 @@ exports.autoStikOnAlready = () => {
 }
 
 exports.afkOn = (pushname, reason) => {
-    return `Fitur AFK berhasil *diaktifkan*!\n\n➸ *Username*:  \n➸ *Alasan*: ${reason}`
+    return `Fitur AFK berhasil *diaktifkan*!\n\n➸ *Username*: ${pushname}\n➸ *Alasan*: ${reason}`
 }
 
 exports.afkOnAlready = () => {
@@ -230,7 +284,7 @@ exports.afkMentioned = (getReason, getTime) => {
 }
 
 exports.afkDone = (pushname) => {
-    return `* * telah kembali dari AFK! Selamat datang kembali~`
+    return `*${pushname}* telah kembali dari AFK! Selamat datang kembali~`
 }
 
 exports.gcMute = () => {
@@ -254,7 +308,7 @@ exports.shopee = (nama, harga, terjual, shop_location, description, link_product
 }
 
 exports.pc = (pushname) => {
-    return `*「 REGISTRATION 」*\n\nAkun kamu berhasil terdaftar! Silakan cek pesan ku di private chat mu ya  ~ :3\n\nNote:\nJika kamu tidak menerima pesan, artinya kamu belum save nomor bot.`
+    return ` *「 REGISTRATION 」*\n\nAkun kamu berhasil terdaftar! Silakan cek pesan ku di private chat mu ya ${pushname}~ :3\n\nNote:\nJika kamu tidak menerima pesan, artinya kamu belum save nomor bot.`
 }
 
 exports.registeredFound = (name, age, time, serial, userId) => {
@@ -313,68 +367,212 @@ exports.muteChatOff = () => {
     return `Berhasil *unmute* bot pada grup ini!`
 }
 
+exports.ss = () => {
+    return `kirim ulang .. Bot ga deteksi SS Kamu!`
+}
+
 exports.muteChatOnAlready = () => {
     return `Mute telah diaktifkan di grup ini sebelumnya!`
 }
 
+exports.randomQuran = (ranquran) => {
+    return `
+    بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+*Nama surah*: ${ranquran.data.result.nama} / ${ranquran.data.result.asma}
+*Arti*: ${ranquran.data.result.arti}
+*Surat ke*: ${ranquran.data.result.nomor}
+*Keterangan*: ${ranquran.data.result.keterangan}
+*Link audio*: ${ranquran.data.result.audio}
+    `
+}
 
-exports.limit = (jumlahUser, level, xp, role, pushname, requiredXp, premium) => {
+exports.hadis = () => {
+    return `
+_*Assalamu'alaikum wr. wb.*_
+
+*Daftar hadis*:
+1. Hadis Bukhari ada 6638 hadis
+    _usage_: ${prefix}hadis bukhari 1
+2. Hadis Muslim ada 4930 hadis
+    _usage_: ${prefix}hadis muslim 25
+3. Hadis Tirmidzi ada 3625 hadis
+    _usage_: ${prefix}hadis tirmidzi 10
+4. Hadis nasai ada 5364 hadis
+    _usage_: ${prefix}hadis nasai 6
+5. Hadis Ahmad ada 4305 hadis
+    _usage_: ${prefix}hadis ahmad 5
+6. Hadis Abu Daud ada 4419 hadis
+    _usage_: ${prefix}hadis abudaud 45
+7. Hadis Malik ada 1587 hadis
+    _usage_: ${prefix}hadis malik 45
+8. Hadis Ibnu Majah ada 4285 hadis
+    _usage_: ${prefix}hadis ibnumajah 8
+9. Hadis Darimi ada 2949 hadis
+    _usage_: ${prefix}hadis darimi 3
+
+*Semoga bermanfaat*
+_*Wassalam*_
+    `
+}
+
+exports.limit = () => {
     return `
 *── 「 LIMIT 」 ──*
-➸  ${pushname} 
-Upss, Batas/limit Pengunaan Km udah habis
-Kamu bisa pakai lg Besok
-limit otomatis nambah besok
+masa gratis km habis
 
-Kamu Bisa beli Member Premium mulai dr 2k
-Untuk Akses Unlimited dibot ini
-DM IG kita instragram.com/indobotwa 
-*Pemesanan hanya Via Instragram*
-_cek harga_
-#harga
+Daftar Premium atau Gunakan Aplikasi
 
-_info gratis_
-Ketik #limitgratis
+Kamu bisa Install Aplikasi INDOBOTWA
+untuk akses gratis Fitur Bot sepuasnya
+aplikasi sudah tersedia di Playstore
 
+Sorry you can See Indobotwa Menu in Aplikasi 
+
+Download On Google Play Store
+https://play.google.com/store/search?q=indobotwa&c=apps
+
+Wajib Kasih Komentar dan Bintang 5
+jika tidak km akan diblok
+
+❏ *_*
+
+    `
+}
+
+exports.asmaulHusna = (assna) => {
+    return `
+───❉ 𝐀𝐬𝐦𝐚𝐮𝐥 𝐇𝐮𝐬𝐧𝐚 ❉──
+
+*${assna.name}*
+❏ *Asmaul husna ke*: ${assna.number}
+❏ *Pelafalan*: ${assna.transliteration}
+❏ *Inggris*: ${assna.en.meaning}
     `
 }
 
 /*MENU UTAMA BOT---------------------------------------------------------------------*/
 exports.menu = (jumlahUser, level, xp, role, pushname, requiredXp, premium) => {
     return `
-Hallo Ka
-➸ Name:  ${pushname}
-➸ Premium: ${premium}
- ____________
+------[ Hallo Teman Bot  ]-----
+======================
+➸ *Name*: ${pushname}
+➸ *Level*: ${level}
+➸ *XP*: ${xp} / ${requiredXp}
+➸ *Role*: ${role}
+➸ *Premium*: ${premium}
+======================
 Berikut adalah menu Utama Bot Kita: 😊
 ____________
 *Menu Stiker Maker*🤖
 #sticker (photo)
 #stickergif (vidio/gif)
-#ttp (text)
+#attp (text)
+
+
+kostom stiker kirim photo dengan
+#stickermeme (teks1) |  (teks2)
 
 #stickerwm (teks1) |  (teks2)
-(bikin stiker dengan nama km)
+buat stiker dengan info diksripsi punya km
 
-#stickermeme (teks1) |  (teks2)
-(kostome stiker dengan tulisan)
+
 ____________
-*Menu Buat Photo Keren*👩🏼‍🎨
-#gaminglogo (Text)
-#sparkling  (Text1 ) | (Text2)
-#neon (Text)
-#text3d (Text)
-#Nulis (Text)
-#pubg (text)
+*Menu Buat Photo Keren dari Text*👩🏼‍🎨
 #kiss (gambar)
-#kalender (link gambar)
- _____________
-*Menu Fun* 🎮
- #tebakgambar
- #qoutes
- #cerpen
- #puisi
- ______________
+#feature ( text)
+#blackpink ( text)
+#neon ( text)
+#greenneon ( text)
+#advanceglow ( text)
+#futureneon ( text)
+#sandwriting ( text)
+#sandsummer ( text)
+#sandengraved ( text)
+#metaldark ( text)
+#neonlight ( text)
+#holographic ( text)
+#text1917 ( text)
+#minion ( text)
+#deluxesilver ( text)
+#newyearcard ( text)
+#bloodfrosted ( text)
+#halloween ( text)
+#jokerlogo ( text)
+#fireworksparkle ( text)
+#natureleaves ( text)
+#bokeh ( text)
+#toxic ( text)
+#strawberry ( text)
+#box3d ( text)
+#roadwarning ( text)
+#breakwall ( text)
+#icecold ( text)
+#luxury ( text)
+#cloud ( text)
+#summersand ( text)
+#horrorblood ( text)
+#thunder ( text)
+
+
+#shadow ( text)
+#cup ( text)
+#cup2 ( text)
+#romance ( text)
+#smoke ( text)
+#burnpaper ( text)
+#lovemessage ( text)
+#undergrass ( text)
+#love ( text)
+#coffe ( text)
+#woodheart ( text)
+#woodenboard ( text)
+#summer3d ( text)
+#wolfmetal ( text)
+#nature3d ( text)
+#underwater ( text)
+#goldenrose ( text)
+#summernature ( text)
+#letterleaves ( text)
+#glowingneon ( text)
+#fallleaves ( text)
+#flamming ( text)
+#harrypotter ( text)
+#carvedwood ( text)
+
+#wetglass ( text)
+#multicolor3d ( text)
+#watercolor ( text)
+#luxurygold ( text)
+#galaxywallpaper ( text)
+#lighttext ( text)
+#beautifulflower ( text)
+#puppycute ( text)
+#royaltext ( text)
+#heartshaped ( text)
+#birthdaycake ( text)
+#galaxystyle ( text)
+#hologram3d ( text)
+#greenneon ( text)
+#glossychrome ( text)
+#greenbush ( text)
+#metallogo ( text)
+#noeltext ( text)
+#glittergold ( text)
+#textcake ( text)
+#starsnight ( text)
+#wooden3d ( text)
+#textbyname ( text)
+#writegalaxy ( text)
+#galaxybat ( text)
+#snow3d ( text)
+#birthdayday ( text)
+#goldplaybutton ( text)
+#silverplaybutton ( text)
+#freefire ( text)
+#cartoongravity ( text)
+#anonymhacker ( text)
+
+
 *Menu Download*😊
 #ytmp3 (link YT)
 ____________
@@ -383,39 +581,65 @@ ____________
  _____________
 *Menu Lainya* 🧙
  #google  (yang dicari)
- _____________
-*Ketik ini* ⭐
-#cll
+
 ____________
 Liat Menu Premium
 #menupremium
-    `
-}
 
-
-exports.menuprem = () => {
-    return `
-------[ Hallo Teman Bot  ]-----   
-Berikut adalah menu Premium yang tersedia:
-    *[1]* Downloader
-    *[2]* Bot
-    *[3]* Misc
-    *[4]* Sticker
-    *[5]* Weeaboo
-    *[6]* Fun
-    *[7]* Moderation
-    *[8]* NSFW
-    *[9]* Owner
-    *[10]* Leveling
-    
-Ketik *${prefix}menu* angka_index untuk membuka menu page yang dipilih.
-contoh : #menu 1
-
+Catatan:
+jika Bot tidak Membalas Berati Perintah yang kamu berikan tidak benar.
+jika bot cek list satu hubungi owner di instragram @indobotwa
 
     `
 }
 
 exports.menuDownloader = () => {
+    return `
+-----[ Islam ]-----
+
+*${prefix}listsurah*
+Melihat list surah Al-Qur'an.
+Aliases: -
+Usage: *${prefix}listsurah*
+
+*${prefix}surah*
+Mengirim surah Al-Qur'an.
+Aliases: -
+Usage: *${prefix}surah* nomor_surah
+
+*${prefix}js*
+Mengetahui jadwal shalat di daerah kalian
+Aliases: - 
+Usage: *${prefix}js* namadaerah
+
+*${prefix}hadis*
+Info hadis.
+Aliases: -
+Usage: *${prefix}hadis* kitab_hadis | nomor_hadis
+
+*${prefix}asmaulhusna*
+Asmaul husna.
+Aliases: -
+Usage: *${prefix}asmaulhusna* nomor_asmaulhusna
+
+*${prefix}randomquran*
+Kirim surah Al-Qur'an secara random.
+Aliases: -
+Usage: *${prefix}randomquran*
+
+*${prefix}translate*
+Terjemahkan teks.
+Aliases: *trans*
+Usage: *${prefix}translate* teks | kode_bahasa
+
+
+_Index of [1]_
+    `
+}
+
+
+/*Menu 2---------------------------------------*/
+exports.menuBot = () => {
     return `
 -----[ DOWNLOADER ]-----
 
@@ -474,13 +698,13 @@ Stiker Line downloader.
 Aliases: -
 Usage: *${prefix}linedl* link_stiker
 
-_Index of [1]_
+_Index of [2]_
     `
 }
 
-exports.menuBot = () => {
+exports.menuMisc = () => {
     return `
------[ BOT ]-----
+-----[ MISC ]-----
 
 1. *${prefix}rules*
 Wajib baca.
@@ -546,79 +770,6 @@ Usage: *${prefix}premiumcheck*
 Cek list user premium.
 Aliases: *listpremium*
 Usage: *${prefix}premiumlist*
-
-_Index of [2]_
-    `
-}
-
-exports.menuMisc = () => {
-    return `
------[ MISC ]-----
-
-1. *${prefix}say*
-Bot akan mengulang pesan mu.
-Aliases: -
-Usage: *${prefix}say* teks
-
-2. *${prefix}lirik*
-Mencari lirik lagu.
-Aliases: -
-Usage: *${prefix}lirik* judul_lagu
-
-3. *${prefix}shortlink*
-Membuat shortlink.
-Aliases: -
-Usage: *${prefix}shortlink* link
-
-4. *${prefix}wikipedia*
-Mengirim Wikipedia dari teks yang diberikan.
-Aliases: *wiki*
-Usage: *${prefix}wikipedia* teks
-
-5. *${prefix}kbbi*
-Mengirim definisi kata dari KBBI.
-Aliases: -
-Usage: *${prefix}kbbi* teks
-
-6. *${prefix}igstalk*
-Stalk akun Instagram.
-Aliases: -
-Usage: *${prefix}igstalk* username
-
-7. *${prefix}gsmarena*
-Mengirim info spesifikasi HP dari GSMArena.
-Aliases: -
-Usage: *${prefix}gsmarena* model_hp
-
-8. *${prefix}receipt*
-Mengirim resep makanan.
-Aliases: *resep*
-Usage: *${prefix}receipt* nama_makanan
-
-9. *${prefix}ytsearch*
-Mengirim hasil pencarian di YouTube.
-Aliases: *yts*
-Usage: *${prefix}ytsearch* query
-
-10. *${prefix}tts*
-Membuat Text to Speech. Kalian perlu kode bahasa setiap menggunakan, cek di sini https://id.wikipedia.org/wiki/Daftar_bahasa_menurut_ISO_639-2
-Aliases: -
-Usage: *${prefix}tts* kode_bahasa | teks
-
-11. *${prefix}afk*
-Set akun kamu ke mode AFK, aku akan mengirim pesan ke orang yang me-mention kamu.
-Aliases: -
-Usage: *${prefix}afk* alasan. Kirim pesan ke grup untuk menonaktifkan mode AFK.
-
-12. *${prefix}distance*
-Untuk mengetahui jarak dari kotamu ke kota yang kamu tuju
-Aliases: -
-Usage: *${prefix}distance* kota_asal | kota_tujuan
-
-13. *${prefix}findsticker*
-Untuk mencari sticker yang kamu cari
-Aliases: *findstiker*
-Usage: *${prefix}findsticker* teks
 
 14. *${prefix}math*
 Kalkulator.
@@ -849,65 +1000,6 @@ exports.menuWeeaboo = () => {
     return `
 -----[ WEEABOO ]-----
 
-1. *${prefix}neko*
-Mengirim foto neko girl.
-Aliases: -
-Usage: *${prefix}neko*
-
-2. *${prefix}wallpaper*
-Mengirim wallpaper anime.
-Aliases: *wp*
-Usage: *${prefix}wallpaper*
-
-3. *${prefix}kemono*
-Mengirim foto kemonomimi girl.
-Aliases: -
-Usage: *${prefix}kemono*
-
-4. *${prefix}kusonime*
-Mencari info anime dan link download batch di Kusonime.
-Aliases: -
-Usage: *${prefix}kusonime* judul_anime
-
-5. *${prefix}komiku*
-Mencari info manga dan link download di Komiku.
-Aliases: -
-Usage: *${prefix}komiku* judul_manga
-
-6. *${prefix}wait*
-Mencari source anime dari screenshot scene.
-Aliases: -
-Usage: Kirim screenshot dengan caption *${prefix}wait* atau reply screenshot dengan caption *${prefix}wait*.
-
-7. *${prefix}source*
-Mencari source dari panel doujin, ilustrasi, dan gambar yang berhubungan dengan anime.
-Aliases: *sauce*
-Usage: Kirim gambar dengan caption *${prefix}source* atau reply gambar dengan caption *${prefix}source*.
-
-8. *${prefix}waifu*
-Mengirim random foto waifu.
-Aliases: -
-Usage: *${prefix}waifu*
-
-9. *${prefix}anitoki*
-Cek update terbaru Anitoki.
-Aliases: -
-Usage: *${prefix}anitoki*
-
-10. *${prefix}neonime*
-Cek update terbaru Neonime.
-Aliases: -
-Usage: *${prefix}neonime*
-
-11. *${prefix}anoboy*
-Cek on-going anime dari Anoboy.
-Aliases: -
-Usage: *${prefix}anoboy*
-
-12. *${prefix}character*
-Find Character from anime.
-Alias: -
-Usage: *{prefix}character* name_character
 
 _Index of [5]_
     `
@@ -1133,80 +1225,6 @@ exports.menuNsfw = () => {
     return `
 -----[ NSFW ]-----
 
-1. *${prefix}lewds*
-Mengirim pict anime lewd.
-Aliases: *lewd*
-Usage: *${prefix}lewds*
-
-2. *${prefix}multilewds*
-Mengirim up to 5 anime lewd pics. (PREMIUM ONLY)
-Aliases: *multilewds multilewd mlewd mlewds*
-Usage: *${prefix}multilewds*
-
-3. *${prefix}nhentai*
-Mengirim info doujinshi dari nHentai.
-Aliases: *nh*
-Usage: *${prefix}nhentai* kode
-
-4. *${prefix}nhdl*
-Mendownload doujin dari nHentai sebagai file PDF. (PREMIUM ONLY)
-Aliases: -
-Usage: *${prefix}nhdl* kode
-
-5. *${prefix}nekopoi*
-Mengirim video link Nekopoi terbaru.
-Aliases: -
-Usage: *${prefix}nekopoi*
-
-6. *${prefix}multifetish*
-Mengirim up to 5 fetish pics. (PREMIUM ONLY)
-Aliases: *mfetish*
-Usage: *${prefix}multifetish* <armpits/feets/thighs/ass/boobs/belly/sideboobs/ahegao>
-
-7. *${prefix}waifu18*
-Mengirim random foto waifu NSFW.
-Aliases: -
-Usage: *${prefix}waifu18*
-
-8. *${prefix}fetish*
-Mengirim fetish pics.
-Aliases: -
-Usage: *${prefix}fetish* armpits/feets/thighs/ass/boobs/belly/sideboobs/ahegao
-
-9. *${prefix}phdl*
-Download video dari Pornhub.
-Aliases: -
-Usage *${prefix}phdl* link
-
-10. *${prefix}yuri*
-Mengirim random foto lewd yuri.
-Aliases: -
-Usage: *${prefix}yuri*
-
-11. *${prefix}lewdavatar*
-Mengirim random avatar lewd.
-Aliases: -
-Usage: *${prefix}lewdavatar*
-
-12. *${prefix}femdom*
-Mengirim random foto ero femdom.
-Aliases: -
-Usage: *${prefix}femdom*
-
-13. *${prefix}nhsearch*
-nHentai search.
-Aliases: -
-Usage: *${prefix}nhsearch* query
-
-14. *${prefix}nekosearch*
-Nekopoi search.
-Aliases: -
-Usage: *${prefix}nekosearch* query
-
-15. *${prefix}cersex*
-Random cerita sex.
-Aliases: -
-Usage: *${prefix}cersex*
 
 _Index of [8]_
     `
@@ -1317,19 +1335,35 @@ Usage: *${prefix}leaderboard*
 _Index of [10]_
     `
 }
+
 exports.harga = () => {
     return `
------[ RULES ]-----
+Hallo Ka untuk jd Member Premium
 
-2k 1 hari
-5k 7 hari
-15k 30 hari
+Bisa langsung Pilih
 
-Pembayaran (gopay,shoppy,ovo,dana,Pulsa)
 
-Order hanya lewat Instragram
+**Donasi Bot Premium**
 
-https://instragram.com/indobotwa
+Paket 1 = 2k 1 hari Unlimited Chat
+
+Paket 2 = 5k 7 hari Unlimited Chat
+
+Paket 3 = 15k 30 Hari Unlimited Chat
+
+
+
+Pembayaran Hanya di
+(Gopay, DANA, OVO, Shope Pulsa)
+
+
+🤗🤗🤗🤗🤗🤗
+
+********
+
+Pemesan only Instragram
+
+Instragram.com/indobotwa
 
     `
 }
@@ -1340,9 +1374,11 @@ exports.rules = () => {
 
 1. Jangan telepon bot.
 Sanksi: *AUTO BLOCK*
-*Yang Rugi Loh Sendiri*
 
-2. Berkata Kasar
+2. Jangan SPAM bot.
+Sanksi: *AUTO BLOCK*
+
+3. Berkata Kasar
 Sanksi: *AUTO BLOCK*
 
 Jika sudah dipahami rules-nya, silakan ketik *${prefix}menu* untuk memulai!
