@@ -12,9 +12,8 @@ ____________
 #stickergif (vidio/gif)
 #ttx (text)
 
-kostom stiker kirim photo dengan
-#stickerwm (teks1) |  (teks2)
 buat stiker dengan info diksripsi punya km
+#stickerwm (teks1) |  (teks2)
 
 ____________
 *Menu Buat Photo Keren dari Text*👩🏼‍🎨
